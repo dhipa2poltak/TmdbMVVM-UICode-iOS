@@ -12,7 +12,7 @@ class GenreVC: BaseVC {
 
     private let vw = GenreView()
 
-    let viewModel = GenreVM()
+    var viewModel: GenreVM?
     weak var coordinator: AppCoordinator?
 
     private let nbName = "SingleRowTVC"
@@ -54,7 +54,7 @@ class GenreVC: BaseVC {
     }
 
     private func setupObserver() {
-        viewModel.isShowDialogLoading.bind { value in
+        viewModel?.isShowDialogLoading.bind { value in
             if value {
                 SVProgressHUD.show()
             } else {
@@ -62,18 +62,18 @@ class GenreVC: BaseVC {
             }
         }
 
-        viewModel.toastMessage.bind { [weak self] value in
+        viewModel?.toastMessage.bind { [weak self] value in
             if !value.isEmpty {
                 self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
-                self?.viewModel.toastMessage.value = ""
+                self?.viewModel?.toastMessage.value = ""
             }
         }
 
-        viewModel.genreData.bind { [weak self] value in
+        viewModel?.genreData.bind { [weak self] value in
             if let theValue = value, theValue {
                 self?.refreshControl.endRefreshing()
                 self?.vw.tableVw.reloadData()
-                self?.viewModel.genreData.value = false
+                self?.viewModel?.genreData.value = false
             }
         }
     }
@@ -81,17 +81,17 @@ class GenreVC: BaseVC {
     override func viewDidAppear(_: Bool) {
         super.setupNavBar()
 
-        viewModel.loadData()
+        viewModel?.loadData()
     }
 
     @objc private func didRefreshControl() {
-        viewModel.loadData()
+        viewModel?.loadData()
     }
 }
 
 extension GenreVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.genres?.count ?? 0
+        return viewModel?.genres?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,7 +99,7 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
 
-        if let genre = viewModel.genres?[indexPath.row] {
+        if let genre = viewModel?.genres?[indexPath.row] {
             cell.textLabel?.text = genre.name ?? ""
         }
 
@@ -107,7 +107,7 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let genre = viewModel.genres?[indexPath.row]
+        let genre = viewModel?.genres?[indexPath.row]
         coordinator?.showMovieByGenre(genreId: genre?.id ?? -1, genreName: genre?.name ?? "unknown")
     }
 }

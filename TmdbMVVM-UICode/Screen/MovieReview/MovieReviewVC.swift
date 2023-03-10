@@ -13,7 +13,7 @@ class MovieReviewVC: BaseVC {
 
     let vw = MovieReviewView()
 
-    let viewModel = MovieReviewVM()
+    var viewModel: MovieReviewVM?
 
     private let nbName = "ReviewTVC"
     private let cellId = "ReviewTVC"
@@ -27,7 +27,7 @@ class MovieReviewVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        vw.lblTitleMovie.text = viewModel.movieTitle
+        vw.lblTitleMovie.text = viewModel?.movieTitle ?? "unknown"
 
         setupObserver()
 
@@ -42,29 +42,34 @@ class MovieReviewVC: BaseVC {
     override func viewDidAppear(_: Bool) {
         super.setupNavBar()
 
-        viewModel.fetchMovieReviews(movieId: viewModel.movieId, page: viewModel.page)
+        if let viewModel = viewModel {
+            viewModel.fetchMovieReviews(movieId: viewModel.movieId, page: viewModel.page)
+        }
     }
 
     private func setupObserver() {
-        viewModel.isShowDialogLoading.bind { [weak self] value in
-            if value && self?.viewModel.reviews.isEmpty ?? true {
+        viewModel?.isShowDialogLoading.bind { [weak self] value in
+            if value && self?.viewModel?.reviews.isEmpty ?? true {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
             }
         }
 
-        viewModel.toastMessage.bind { [weak self] value in
+        viewModel?.toastMessage.bind { [weak self] value in
             if !value.isEmpty {
                 self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
-                self?.viewModel.toastMessage.value = ""
+                self?.viewModel?.toastMessage.value = ""
             }
         }
 
-        viewModel.reviewData.bind { [weak self] value in
+        viewModel?.reviewData.bind { [weak self] value in
             if value != nil {
                 self?.vw.tableVw.reloadData()
-                self?.viewModel.reviewData.value = nil
+                self?.viewModel?.reviewData.value = nil
+
+                let isEmpty = self?.viewModel?.reviews.isEmpty ?? true
+                self?.vw.tableVw.isHidden = isEmpty
             }
         }
     }
@@ -74,7 +79,7 @@ class MovieReviewVC: BaseVC {
     {
         let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
 
-        if distance < 200 {
+        if distance < 200, let viewModel = viewModel {
             viewModel.fetchMovieReviews(movieId: viewModel.movieId, page: viewModel.page + 1)
         }
     }
@@ -82,15 +87,15 @@ class MovieReviewVC: BaseVC {
 
 extension MovieReviewVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.reviews.count
+        return viewModel?.reviews.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ReviewTVC
 
-        let review = viewModel.reviews[indexPath.row]
-
-        cell.bindData(review: review)
+        if let review = viewModel?.reviews[indexPath.row] {
+            cell.bindData(review: review)
+        }
 
         return cell
     }

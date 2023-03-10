@@ -12,27 +12,27 @@ import SwiftyJSON
 
 class ApiClient {
 
-    static func fetchMovieGenre() -> Observable<GenreResponse> {
+    func fetchMovieGenre() -> Observable<GenreResponse> {
         request(Router.fetchMovieGenre)
     }
 
-    static func fetchMovieByGenre(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreResponse> {
+    func fetchMovieByGenre(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreResponse> {
         request(Router.fetchMovieByGenre(genreId: genreId, page: page))
     }
 
-    static func fetchMovieDetail(movieId: Int) -> Observable<MovieDetailsResponse> {
+    func fetchMovieDetail(movieId: Int) -> Observable<MovieDetailsResponse> {
         request(Router.fetchMovieDetail(movieId: movieId))
     }
 
-    static func fetchMovieReviews(movieId: Int, page: Int) -> Observable<ReviewResponse> {
+    func fetchMovieReviews(movieId: Int, page: Int) -> Observable<ReviewResponse> {
         request(Router.fetchMovieReviews(movieId: movieId, page: page))
     }
 
-    static func fetchMovieTrailer(movieId: Int) -> Observable<TrailerResponse> {
+    func fetchMovieTrailer(movieId: Int) -> Observable<TrailerResponse> {
         request(Router.fetchMovieTrailer(movieId: movieId))
     }
 
-    private static func request<T: Codable>(_ urlConvertible: URLRequestConvertible) -> Observable<T> {
+    private func request<T: Codable>(_ urlConvertible: URLRequestConvertible) -> Observable<T> {
         return Observable<T>.create { observer in
 
             let request = AF.request(urlConvertible)

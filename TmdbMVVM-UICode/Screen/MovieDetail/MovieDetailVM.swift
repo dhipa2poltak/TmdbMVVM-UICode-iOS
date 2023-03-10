@@ -10,6 +10,7 @@ import RxSwift
 
 class MovieDetailVM: BaseVM {
 
+    private let apiClient: ApiClient?
     private let disposeBag = DisposeBag()
 
     var movieId = -1
@@ -19,10 +20,14 @@ class MovieDetailVM: BaseVM {
     let urlImage = Box("")
     let descMovie = Box("")
 
+    init(apiClient: ApiClient?) {
+        self.apiClient = apiClient
+    }
+
     func fetchMovieDetail(movieId: Int) {
         isShowDialogLoading.value = true
 
-        ApiClient.fetchMovieDetail(movieId: movieId)
+        apiClient?.fetchMovieDetail(movieId: movieId)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false

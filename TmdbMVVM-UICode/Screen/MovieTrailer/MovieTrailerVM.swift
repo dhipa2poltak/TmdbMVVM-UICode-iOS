@@ -10,15 +10,20 @@ import RxSwift
 
 class MovieTrailerVM: BaseVM {
 
+    private let apiClient: ApiClient?
     private let disposeBag = DisposeBag()
 
     var movieId = -1
     let movieKey = Box("")
 
+    init(apiClient: ApiClient?) {
+        self.apiClient = apiClient
+    }
+
     func fetchMovieTrailer(movieId: Int) {
         isShowDialogLoading.value = true
 
-        ApiClient.fetchMovieTrailer(movieId: movieId)
+        apiClient?.fetchMovieTrailer(movieId: movieId)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false

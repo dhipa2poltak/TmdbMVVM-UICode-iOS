@@ -13,7 +13,7 @@ class MovieByGenreVC: BaseVC {
 
     let vw = MovieByGenreView()
 
-    let viewModel = MovieByGenreVM()
+    var viewModel: MovieByGenreVM?
     weak var coordinator: AppCoordinator?
 
     private let nbName = "SingleRowTVC"
@@ -27,8 +27,8 @@ class MovieByGenreVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if !viewModel.genreName.isEmpty {
-            vw.lblTitle.text = "Genre \(viewModel.genreName) Movies"
+        if !(viewModel?.genreName.isEmpty ?? true) {
+            vw.lblTitle.text = "Genre \(viewModel?.genreName ?? "unknown") Movies"
         }
 
         setupObserver()
@@ -42,25 +42,25 @@ class MovieByGenreVC: BaseVC {
     }
 
     private func setupObserver() {
-        viewModel.isShowDialogLoading.bind { [weak self] value in
-            if value && self?.viewModel.movies.isEmpty ?? true {
+        viewModel?.isShowDialogLoading.bind { [weak self] value in
+            if value && self?.viewModel?.movies.isEmpty ?? true {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
             }
         }
 
-        viewModel.toastMessage.bind { [weak self] value in
+        viewModel?.toastMessage.bind { [weak self] value in
             if !value.isEmpty {
                 self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
-                self?.viewModel.toastMessage.value = ""
+                self?.viewModel?.toastMessage.value = ""
             }
         }
 
-        viewModel.movieData.bind { [weak self] value in
+        viewModel?.movieData.bind { [weak self] value in
             if let theValue = value, theValue {
                 self?.vw.tableVw.reloadData()
-                self?.viewModel.movieData.value = nil
+                self?.viewModel?.movieData.value = nil
             }
         }
     }
@@ -68,7 +68,9 @@ class MovieByGenreVC: BaseVC {
     override func viewDidAppear(_: Bool) {
         super.setupNavBar()
 
-        viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: viewModel.page)
+        if let viewModel = viewModel {
+            viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: viewModel.page)
+        }
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView,
@@ -76,7 +78,7 @@ class MovieByGenreVC: BaseVC {
     {
         let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
 
-        if distance < 200 {
+        if distance < 200, let viewModel = viewModel {
             viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: viewModel.page + 1)
         }
     }
@@ -84,7 +86,7 @@ class MovieByGenreVC: BaseVC {
 
 extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.movies.count
+        return viewModel?.movies.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,14 +94,14 @@ extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
 
-        let movie = viewModel.movies[indexPath.row]
-        cell.textLabel?.text = movie.title ?? ""
+        let movie = viewModel?.movies[indexPath.row]
+        cell.textLabel?.text = movie?.title ?? ""
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let movie = viewModel.movies[indexPath.row]
-        coordinator?.showMovieDetail(movieId: movie.id ?? -1)
+        let movie = viewModel?.movies[indexPath.row]
+        coordinator?.showMovieDetail(movieId: movie?.id ?? -1)
     }
 }

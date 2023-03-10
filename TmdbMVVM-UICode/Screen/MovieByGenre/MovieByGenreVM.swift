@@ -10,6 +10,7 @@ import RxSwift
 
 class MovieByGenreVM: BaseVM {
 
+    private let apiClient: ApiClient?
     private let disposeBag = DisposeBag()
 
     var movies: [Movie] = []
@@ -19,10 +20,14 @@ class MovieByGenreVM: BaseVM {
     var genreName = ""
     var page = 1
 
+    init(apiClient: ApiClient?) {
+        self.apiClient = apiClient
+    }
+
     func fetchMovieGenre(genreId: String, page: Int) {
         isShowDialogLoading.value = true
 
-        ApiClient.fetchMovieByGenre(genreId: genreId, page: page)
+        apiClient?.fetchMovieByGenre(genreId: genreId, page: page)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false
