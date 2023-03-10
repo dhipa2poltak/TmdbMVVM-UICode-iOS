@@ -32,99 +32,77 @@ class AppCoordinator: Coordinator {
             GenreVM(apiClient: resolver.resolve(ApiClient.self))
         }
 
-        self.container.register(MovieByGenreVM.self) { resolver in
-            MovieByGenreVM(apiClient: resolver.resolve(ApiClient.self))
+        self.container.register(MovieByGenreVM.self) { (resolver, genreId: Int, genreName: String) in
+            let vm = MovieByGenreVM(apiClient: resolver.resolve(ApiClient.self))
+            vm.genreId = genreId
+            vm.genreName = genreName
+
+            return vm
         }
 
-        self.container.register(MovieDetailVM.self) { resolver in
-            MovieDetailVM(apiClient: resolver.resolve(ApiClient.self))
+        self.container.register(MovieDetailVM.self) { (resolver, movieId: Int) in
+            let vm = MovieDetailVM(apiClient: resolver.resolve(ApiClient.self))
+            vm.movieId = movieId
+
+            return vm
         }
 
-        self.container.register(MovieReviewVM.self) { resolver in
-            MovieReviewVM(apiClient: resolver.resolve(ApiClient.self))
+        self.container.register(MovieReviewVM.self) { (resolver, movieId: Int, movieTitle: String) in
+            let vm = MovieReviewVM(apiClient: resolver.resolve(ApiClient.self))
+            vm.movieId = movieId
+            vm.movieTitle = movieTitle
+
+            return vm
         }
 
-        self.container.register(MovieTrailerVM.self) { resolver in
-            MovieTrailerVM(apiClient: resolver.resolve(ApiClient.self))
-        }
+        self.container.register(MovieTrailerVM.self) { (resolver, movieId: Int) in
+            let vm = MovieTrailerVM(apiClient: resolver.resolve(ApiClient.self))
+            vm.movieId = movieId
 
-        self.container.register(GenreVC.self) { _ in
-            GenreVC()
-        }
-
-        self.container.register(MovieByGenreVC.self) { _ in
-            MovieByGenreVC()
-        }
-
-        self.container.register(MovieDetailVC.self) { _ in
-            MovieDetailVC()
-        }
-
-        self.container.register(MovieReviewVC.self) { _ in
-            MovieReviewVC()
-        }
-
-        self.container.register(MovieTrailerVC.self) { _ in
-            MovieTrailerVC()
+            return vm
         }
     }
 
     func start() {
-        let vc = container.resolve(GenreVC.self)
+        let vc = GenreVC()
         let viewModel = container.resolve(GenreVM.self)
-        vc?.viewModel = viewModel
-        vc?.coordinator = container.resolve(AppCoordinator.self)
+        vc.viewModel = viewModel
+        vc.coordinator = container.resolve(AppCoordinator.self)
 
-        if let vc = vc {
-            navigationController.pushViewController(vc, animated: false)
-        }
+        navigationController.pushViewController(vc, animated: false)
     }
 
     func showMovieByGenre(genreId: Int, genreName: String) {
-        let vc = container.resolve(MovieByGenreVC.self)
-        let viewModel = container.resolve(MovieByGenreVM.self)
-        viewModel?.genreId = genreId
-        viewModel?.genreName = genreName
-        vc?.viewModel = viewModel
-        vc?.coordinator = container.resolve(AppCoordinator.self)
+        let vc = MovieByGenreVC()
+        let viewModel = container.resolve(MovieByGenreVM.self, arguments: genreId, genreName)
+        vc.viewModel = viewModel
+        vc.coordinator = container.resolve(AppCoordinator.self)
 
-        if let vc = vc {
-            navigationController.pushViewController(vc, animated: true)
-        }
+        navigationController.pushViewController(vc, animated: true)
     }
 
     func showMovieDetail(movieId: Int) {
-        let vc = container.resolve(MovieDetailVC.self)
-        let viewModel = container.resolve(MovieDetailVM.self)
-        viewModel?.movieId = movieId
-        vc?.viewModel = viewModel
-        vc?.coordinator = container.resolve(AppCoordinator.self)
+        let vc = MovieDetailVC()
+        let viewModel = container.resolve(MovieDetailVM.self, argument: movieId)
+        vc.viewModel = viewModel
+        vc.coordinator = container.resolve(AppCoordinator.self)
 
-        if let vc = vc {
-            navigationController.pushViewController(vc, animated: true)
-        }
+        navigationController.pushViewController(vc, animated: true)
     }
 
     func showMovieReview(movieId: Int, movieTitle: String) {
-        let vc = container.resolve(MovieReviewVC.self)
-        let viewModel = container.resolve(MovieReviewVM.self)
-        viewModel?.movieId = movieId
-        viewModel?.movieTitle = movieTitle
-        vc?.viewModel = viewModel
+        let vc = MovieReviewVC()
+        let viewModel = container.resolve(MovieReviewVM.self, arguments: movieId, movieTitle)
+        vc.viewModel = viewModel
 
-        if let vc = vc {
-            navigationController.pushViewController(vc, animated: true)
-        }
+        navigationController.pushViewController(vc, animated: true)
     }
 
     func showMovieTrailer(movieId: Int) {
-        let vc = container.resolve(MovieTrailerVC.self)
-        let viewModel = container.resolve(MovieTrailerVM.self)
-        viewModel?.movieId = movieId
-        vc?.viewModel = viewModel
+        let vc = MovieTrailerVC()
+        let viewModel = container.resolve(MovieTrailerVM.self, argument: movieId)
+        vc.viewModel = viewModel
 
-        if let vc = vc {
-            navigationController.pushViewController(vc, animated: true)
-        }
+        navigationController.pushViewController(vc, animated: true)
     }
 }
