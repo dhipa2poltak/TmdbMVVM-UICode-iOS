@@ -250,8 +250,6 @@
 				CE84490829B67AF900231703 /* Networking */,
 				CE84490929B67B1700231703 /* Screen */,
 				CE84490A29B67B2B00231703 /* UIComponent */,
-				CE8448AF29B678FF00231703 /* Assets.xcassets */,
-				CE8448B429B678FF00231703 /* Info.plist */,
 			);
 			path = "TmdbMVVM-UICode";
 			sourceTree = "<group>";
@@ -277,10 +275,12 @@
 		CE8448E229B6797C00231703 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CE8448AF29B678FF00231703 /* Assets.xcassets */,
 				CE8448B129B678FF00231703 /* LaunchScreen.storyboard */,
 				CE8448A629B678F200231703 /* AppDelegate.swift */,
 				CE84497029B6804C00231703 /* Coordinator.swift */,
 				CE84497529B6807A00231703 /* AppCoordinator.swift */,
+				CE8448B429B678FF00231703 /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -879,7 +879,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-UICode/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-UICode/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -899,7 +899,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-UICode/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-UICode/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1068,7 +1068,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-UICode/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-UICode/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1193,7 +1193,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-UICode/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-UICode/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1312,7 +1312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-UICode/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-UICode/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1431,7 +1431,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-UICode/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-UICode/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
