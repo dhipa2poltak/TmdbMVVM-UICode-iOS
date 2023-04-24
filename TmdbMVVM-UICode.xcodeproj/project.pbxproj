@@ -33,6 +33,7 @@
 		CE597C2A29F6C31900276B64 /* GetMovieTrailerUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C2929F6C31900276B64 /* GetMovieTrailerUseCaseImpl.swift */; };
 		CE597C3629F6C8A900276B64 /* AppDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C3529F6C8A900276B64 /* AppDataSource.swift */; };
 		CE597C3E29F6C8D300276B64 /* AppRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C3D29F6C8D300276B64 /* AppRepositoryImpl.swift */; };
+		CE597C5929F6CB4800276B64 /* RemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C5829F6CB4800276B64 /* RemoteDataSourceImpl.swift */; };
 		CE8448A729B678F200231703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8448A629B678F200231703 /* AppDelegate.swift */; };
 		CE8448AB29B678F200231703 /* GenreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8448AA29B678F200231703 /* GenreVC.swift */; };
 		CE8448B029B678FF00231703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8448AF29B678FF00231703 /* Assets.xcassets */; };
@@ -139,6 +140,7 @@
 		CE597C2929F6C31900276B64 /* GetMovieTrailerUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieTrailerUseCaseImpl.swift; sourceTree = "<group>"; };
 		CE597C3529F6C8A900276B64 /* AppDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSource.swift; sourceTree = "<group>"; };
 		CE597C3D29F6C8D300276B64 /* AppRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepositoryImpl.swift; sourceTree = "<group>"; };
+		CE597C5829F6CB4800276B64 /* RemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceImpl.swift; sourceTree = "<group>"; };
 		CE8448A329B678F200231703 /* TmdbMVVM-UICode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TmdbMVVM-UICode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8448A629B678F200231703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8448AA29B678F200231703 /* GenreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreVC.swift; sourceTree = "<group>"; };
@@ -352,6 +354,60 @@
 			path = response;
 			sourceTree = "<group>";
 		};
+		CE597C4229F6CA4600276B64 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				CE597C4329F6CA5B00276B64 /* data */,
+				CE8448E629B679C000231703 /* BaseClass */,
+				CE8448F729B67A4900231703 /* BindingUtil */,
+				CE84490029B67A8800231703 /* Configs */,
+				CE84490629B67AD200231703 /* Extension */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		CE597C4329F6CA5B00276B64 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				CE597C4729F6CADB00276B64 /* core */,
+				CE597C4829F6CAE200276B64 /* datasource */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		CE597C4729F6CADB00276B64 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				CE597C4929F6CAF500276B64 /* api */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		CE597C4829F6CAE200276B64 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				CE597C5829F6CB4800276B64 /* RemoteDataSourceImpl.swift */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		CE597C4929F6CAF500276B64 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				CE597C4A29F6CAFA00276B64 /* rest */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		CE597C4A29F6CAFA00276B64 /* rest */ = {
+			isa = PBXGroup;
+			children = (
+				CE8449A529B6887100231703 /* ApiClient.swift */,
+				CE8449A029B6884000231703 /* Router.swift */,
+			);
+			path = rest;
+			sourceTree = "<group>";
+		};
 		CE84489A29B678F200231703 = {
 			isa = PBXGroup;
 			children = (
@@ -377,14 +433,10 @@
 		CE8448A529B678F200231703 /* TmdbMVVM-UICode */ = {
 			isa = PBXGroup;
 			children = (
+				CE8448E229B6797C00231703 /* App */,
 				CE597C2E29F6C72300276B64 /* data */,
 				CE597BBE29F6BEC400276B64 /* domain */,
-				CE8448E229B6797C00231703 /* App */,
-				CE8448E629B679C000231703 /* BaseClass */,
-				CE8448F729B67A4900231703 /* BindingUtil */,
-				CE84490029B67A8800231703 /* Configs */,
-				CE84490629B67AD200231703 /* Extension */,
-				CE84490829B67AF900231703 /* Networking */,
+				CE597C4229F6CA4600276B64 /* framework */,
 				CE84490929B67B1700231703 /* Screen */,
 				CE84490A29B67B2B00231703 /* UIComponent */,
 			);
@@ -472,15 +524,6 @@
 				CE84495829B67F6800231703 /* Trailer.swift */,
 			);
 			path = model;
-			sourceTree = "<group>";
-		};
-		CE84490829B67AF900231703 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				CE8449A029B6884000231703 /* Router.swift */,
-				CE8449A529B6887100231703 /* ApiClient.swift */,
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		CE84490929B67B1700231703 /* Screen */ = {
@@ -837,6 +880,7 @@
 				CE8448F329B67A4100231703 /* BaseVM.swift in Sources */,
 				CE84493D29B67E8600231703 /* ProductionCompany.swift in Sources */,
 				CE84495429B67F4800231703 /* ReviewResponse.swift in Sources */,
+				CE597C5929F6CB4800276B64 /* RemoteDataSourceImpl.swift in Sources */,
 				CE8449F629B7099E00231703 /* MovieTrailerView.swift in Sources */,
 				CE84495929B67F6800231703 /* Trailer.swift in Sources */,
 				CE8448EE29B67A1400231703 /* BaseVC.swift in Sources */,
