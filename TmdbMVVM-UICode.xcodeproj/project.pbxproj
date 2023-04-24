@@ -10,6 +10,27 @@
 		320ECB86F2EFC3595058B36C /* Pods_TmdbMVVM_UICodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C34241FC34F1BA7EE85B590 /* Pods_TmdbMVVM_UICodeTests.framework */; };
 		5B69D91173A0BAA881AC44F3 /* Pods_TmdbMVVM_UICode_TmdbMVVM_UICodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8FAAF68939FA2773610114 /* Pods_TmdbMVVM_UICode_TmdbMVVM_UICodeUITests.framework */; };
 		5EA175CD3B8B523C40FCE502 /* Pods_TmdbMVVM_UICode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED282AD3922792308F832223 /* Pods_TmdbMVVM_UICode.framework */; };
+		CE597BC329F6BF6F00276B64 /* AuthorDetailsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BC229F6BF6F00276B64 /* AuthorDetailsEntity.swift */; };
+		CE597BCB29F6BF9F00276B64 /* DiscoverMovieByGenreDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BCA29F6BF9F00276B64 /* DiscoverMovieByGenreDomain.swift */; };
+		CE597BD029F6BFCB00276B64 /* GenreDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BCF29F6BFCB00276B64 /* GenreDomain.swift */; };
+		CE597BD529F6BFF600276B64 /* GenreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BD429F6BFF600276B64 /* GenreEntity.swift */; };
+		CE597BDA29F6C01D00276B64 /* MovieDetailsDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BD929F6C01D00276B64 /* MovieDetailsDomain.swift */; };
+		CE597BDF29F6C04600276B64 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BDE29F6C04600276B64 /* MovieEntity.swift */; };
+		CE597BE429F6C06E00276B64 /* ReviewDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BE329F6C06E00276B64 /* ReviewDomain.swift */; };
+		CE597BE929F6C09100276B64 /* ReviewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BE829F6C09100276B64 /* ReviewEntity.swift */; };
+		CE597BEE29F6C0BE00276B64 /* TrailerDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BED29F6C0BE00276B64 /* TrailerDomain.swift */; };
+		CE597BF329F6C0F800276B64 /* TrailerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BF229F6C0F800276B64 /* TrailerEntity.swift */; };
+		CE597BF829F6C1A100276B64 /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BF729F6C1A100276B64 /* AppRepository.swift */; };
+		CE597BFD29F6C1D000276B64 /* GetMovieByGenreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BFC29F6C1D000276B64 /* GetMovieByGenreUseCase.swift */; };
+		CE597C0229F6C1F400276B64 /* GetMovieByGenreUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C0129F6C1F400276B64 /* GetMovieByGenreUseCaseImpl.swift */; };
+		CE597C0729F6C21C00276B64 /* GetMovieDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C0629F6C21C00276B64 /* GetMovieDetailsUseCase.swift */; };
+		CE597C0C29F6C24200276B64 /* GetMovieDetailsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C0B29F6C24200276B64 /* GetMovieDetailsUseCaseImpl.swift */; };
+		CE597C1129F6C26900276B64 /* GetMovieGenreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C1029F6C26900276B64 /* GetMovieGenreUseCase.swift */; };
+		CE597C1629F6C28C00276B64 /* GetMovieGenreUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C1529F6C28C00276B64 /* GetMovieGenreUseCaseImpl.swift */; };
+		CE597C1B29F6C2B100276B64 /* GetMovieReviewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C1A29F6C2B100276B64 /* GetMovieReviewUseCase.swift */; };
+		CE597C2029F6C2D500276B64 /* GetMovieReviewUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C1F29F6C2D500276B64 /* GetMovieReviewUseCaseImpl.swift */; };
+		CE597C2529F6C2F900276B64 /* GetMovieTrailerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C2429F6C2F900276B64 /* GetMovieTrailerUseCase.swift */; };
+		CE597C2A29F6C31900276B64 /* GetMovieTrailerUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C2929F6C31900276B64 /* GetMovieTrailerUseCaseImpl.swift */; };
 		CE8448A729B678F200231703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8448A629B678F200231703 /* AppDelegate.swift */; };
 		CE8448AB29B678F200231703 /* GenreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8448AA29B678F200231703 /* GenreVC.swift */; };
 		CE8448B029B678FF00231703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8448AF29B678FF00231703 /* Assets.xcassets */; };
@@ -93,6 +114,27 @@
 		B8D32BDF2826404171B255DC /* Pods-TmdbMVVM-UICode.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-UICode.release staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-UICode/Pods-TmdbMVVM-UICode.release staging.xcconfig"; sourceTree = "<group>"; };
 		BBC22E1F00B2BA837837F2C7 /* Pods-TmdbMVVM-UICode-TmdbMVVM-UICodeUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-UICode-TmdbMVVM-UICodeUITests.release staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-UICode-TmdbMVVM-UICodeUITests/Pods-TmdbMVVM-UICode-TmdbMVVM-UICodeUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		CE388B2061A89B978115FA4A /* Pods-TmdbMVVM-UICodeTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-UICodeTests.debug staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-UICodeTests/Pods-TmdbMVVM-UICodeTests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		CE597BC229F6BF6F00276B64 /* AuthorDetailsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetailsEntity.swift; sourceTree = "<group>"; };
+		CE597BCA29F6BF9F00276B64 /* DiscoverMovieByGenreDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMovieByGenreDomain.swift; sourceTree = "<group>"; };
+		CE597BCF29F6BFCB00276B64 /* GenreDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDomain.swift; sourceTree = "<group>"; };
+		CE597BD429F6BFF600276B64 /* GenreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreEntity.swift; sourceTree = "<group>"; };
+		CE597BD929F6C01D00276B64 /* MovieDetailsDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsDomain.swift; sourceTree = "<group>"; };
+		CE597BDE29F6C04600276B64 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
+		CE597BE329F6C06E00276B64 /* ReviewDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDomain.swift; sourceTree = "<group>"; };
+		CE597BE829F6C09100276B64 /* ReviewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEntity.swift; sourceTree = "<group>"; };
+		CE597BED29F6C0BE00276B64 /* TrailerDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerDomain.swift; sourceTree = "<group>"; };
+		CE597BF229F6C0F800276B64 /* TrailerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerEntity.swift; sourceTree = "<group>"; };
+		CE597BF729F6C1A100276B64 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
+		CE597BFC29F6C1D000276B64 /* GetMovieByGenreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieByGenreUseCase.swift; sourceTree = "<group>"; };
+		CE597C0129F6C1F400276B64 /* GetMovieByGenreUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieByGenreUseCaseImpl.swift; sourceTree = "<group>"; };
+		CE597C0629F6C21C00276B64 /* GetMovieDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieDetailsUseCase.swift; sourceTree = "<group>"; };
+		CE597C0B29F6C24200276B64 /* GetMovieDetailsUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieDetailsUseCaseImpl.swift; sourceTree = "<group>"; };
+		CE597C1029F6C26900276B64 /* GetMovieGenreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieGenreUseCase.swift; sourceTree = "<group>"; };
+		CE597C1529F6C28C00276B64 /* GetMovieGenreUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieGenreUseCaseImpl.swift; sourceTree = "<group>"; };
+		CE597C1A29F6C2B100276B64 /* GetMovieReviewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieReviewUseCase.swift; sourceTree = "<group>"; };
+		CE597C1F29F6C2D500276B64 /* GetMovieReviewUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieReviewUseCaseImpl.swift; sourceTree = "<group>"; };
+		CE597C2429F6C2F900276B64 /* GetMovieTrailerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieTrailerUseCase.swift; sourceTree = "<group>"; };
+		CE597C2929F6C31900276B64 /* GetMovieTrailerUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieTrailerUseCaseImpl.swift; sourceTree = "<group>"; };
 		CE8448A329B678F200231703 /* TmdbMVVM-UICode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TmdbMVVM-UICode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8448A629B678F200231703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8448AA29B678F200231703 /* GenreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreVC.swift; sourceTree = "<group>"; };
@@ -216,6 +258,58 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE597BBE29F6BEC400276B64 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				CE597BBF29F6BECB00276B64 /* entity */,
+				CE597BC029F6BED400276B64 /* repository */,
+				CE597BC129F6BEF500276B64 /* usecase */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		CE597BBF29F6BECB00276B64 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				CE597BC229F6BF6F00276B64 /* AuthorDetailsEntity.swift */,
+				CE597BCA29F6BF9F00276B64 /* DiscoverMovieByGenreDomain.swift */,
+				CE597BCF29F6BFCB00276B64 /* GenreDomain.swift */,
+				CE597BD429F6BFF600276B64 /* GenreEntity.swift */,
+				CE597BD929F6C01D00276B64 /* MovieDetailsDomain.swift */,
+				CE597BDE29F6C04600276B64 /* MovieEntity.swift */,
+				CE597BE329F6C06E00276B64 /* ReviewDomain.swift */,
+				CE597BE829F6C09100276B64 /* ReviewEntity.swift */,
+				CE597BED29F6C0BE00276B64 /* TrailerDomain.swift */,
+				CE597BF229F6C0F800276B64 /* TrailerEntity.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		CE597BC029F6BED400276B64 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				CE597BF729F6C1A100276B64 /* AppRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		CE597BC129F6BEF500276B64 /* usecase */ = {
+			isa = PBXGroup;
+			children = (
+				CE597BFC29F6C1D000276B64 /* GetMovieByGenreUseCase.swift */,
+				CE597C0129F6C1F400276B64 /* GetMovieByGenreUseCaseImpl.swift */,
+				CE597C0629F6C21C00276B64 /* GetMovieDetailsUseCase.swift */,
+				CE597C0B29F6C24200276B64 /* GetMovieDetailsUseCaseImpl.swift */,
+				CE597C1029F6C26900276B64 /* GetMovieGenreUseCase.swift */,
+				CE597C1529F6C28C00276B64 /* GetMovieGenreUseCaseImpl.swift */,
+				CE597C1A29F6C2B100276B64 /* GetMovieReviewUseCase.swift */,
+				CE597C1F29F6C2D500276B64 /* GetMovieReviewUseCaseImpl.swift */,
+				CE597C2429F6C2F900276B64 /* GetMovieTrailerUseCase.swift */,
+				CE597C2929F6C31900276B64 /* GetMovieTrailerUseCaseImpl.swift */,
+			);
+			path = usecase;
+			sourceTree = "<group>";
+		};
 		CE84489A29B678F200231703 = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +335,7 @@
 		CE8448A529B678F200231703 /* TmdbMVVM-UICode */ = {
 			isa = PBXGroup;
 			children = (
+				CE597BBE29F6BEC400276B64 /* domain */,
 				CE8448E229B6797C00231703 /* App */,
 				CE8448E629B679C000231703 /* BaseClass */,
 				CE8448F729B67A4900231703 /* BindingUtil */,
@@ -667,22 +762,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE84491E29B67D4E00231703 /* Genre.swift in Sources */,
+				CE597C1629F6C28C00276B64 /* GetMovieGenreUseCaseImpl.swift in Sources */,
+				CE597BEE29F6C0BE00276B64 /* TrailerDomain.swift in Sources */,
+				CE597C2029F6C2D500276B64 /* GetMovieReviewUseCaseImpl.swift in Sources */,
+				CE597BDA29F6C01D00276B64 /* MovieDetailsDomain.swift in Sources */,
 				CE84494A29B67EEA00231703 /* AuthorDetails.swift in Sources */,
 				CE8449B029B688E700231703 /* MovieByGenreVC.swift in Sources */,
+				CE597BD029F6BFCB00276B64 /* GenreDomain.swift in Sources */,
 				CE8449FC29B70BBC00231703 /* ReviewTVC.swift in Sources */,
+				CE597BF829F6C1A100276B64 /* AppRepository.swift in Sources */,
 				CE8449C929B6899900231703 /* MovieReviewVM.swift in Sources */,
 				CE8449E729B7049600231703 /* MovieByGenreView.swift in Sources */,
 				CE8449AB29B6889F00231703 /* GenreVM.swift in Sources */,
+				CE597C1129F6C26900276B64 /* GetMovieGenreUseCase.swift in Sources */,
 				CE84493229B67E2300231703 /* SpokenLanguage.swift in Sources */,
 				CE84491129B67CA700231703 /* UIColor+Ext.swift in Sources */,
 				CE84492D29B67DF800231703 /* Movie.swift in Sources */,
 				CE8448AB29B678F200231703 /* GenreVC.swift in Sources */,
+				CE597C2A29F6C31900276B64 /* GetMovieTrailerUseCaseImpl.swift in Sources */,
 				CE8449D829B6FF9A00231703 /* GenreView.swift in Sources */,
+				CE597C2529F6C2F900276B64 /* GetMovieTrailerUseCase.swift in Sources */,
 				CE8449DD29B6FFC900231703 /* ProgrammaticView.swift in Sources */,
+				CE597BE429F6C06E00276B64 /* ReviewDomain.swift in Sources */,
 				CE84497629B6807A00231703 /* AppCoordinator.swift in Sources */,
 				CE84497129B6804C00231703 /* Coordinator.swift in Sources */,
+				CE597BFD29F6C1D000276B64 /* GetMovieByGenreUseCase.swift in Sources */,
 				CE8449E229B7013000231703 /* UIView+Ext.swift in Sources */,
+				CE597C0729F6C21C00276B64 /* GetMovieDetailsUseCase.swift in Sources */,
+				CE597BD529F6BFF600276B64 /* GenreEntity.swift in Sources */,
 				CE84492329B67D8100231703 /* DiscoverMovieByGenreResponse.swift in Sources */,
+				CE597C1B29F6C2B100276B64 /* GetMovieReviewUseCase.swift in Sources */,
 				CE844A0429B70BCB00231703 /* ReviewView.swift in Sources */,
 				CE8449A629B6887100231703 /* ApiClient.swift in Sources */,
 				CE84490229B67AB000231703 /* BuildConfiguration.swift in Sources */,
@@ -696,16 +805,23 @@
 				CE84494F29B67F2000231703 /* Review.swift in Sources */,
 				CE8449A129B6884000231703 /* Router.swift in Sources */,
 				CE84494529B67EB600231703 /* MovieDetailsResponse.swift in Sources */,
+				CE597BC329F6BF6F00276B64 /* AuthorDetailsEntity.swift in Sources */,
 				CE84495E29B67F8D00231703 /* TrailerResponse.swift in Sources */,
 				CE8449C429B6897800231703 /* MovieReviewVC.swift in Sources */,
 				CE8449BA29B6893F00231703 /* MovieDetailVC.swift in Sources */,
 				CE8448A729B678F200231703 /* AppDelegate.swift in Sources */,
 				CE8449BF29B6894E00231703 /* MovieDetailVM.swift in Sources */,
+				CE597BE929F6C09100276B64 /* ReviewEntity.swift in Sources */,
+				CE597BDF29F6C04600276B64 /* MovieEntity.swift in Sources */,
 				CE84491929B67CDE00231703 /* UIViewController+Ext.swift in Sources */,
+				CE597BF329F6C0F800276B64 /* TrailerEntity.swift in Sources */,
+				CE597C0C29F6C24200276B64 /* GetMovieDetailsUseCaseImpl.swift in Sources */,
 				CE8449EC29B7094100231703 /* MovieDetailView.swift in Sources */,
 				CE84493729B67E5300231703 /* ProductionCountry.swift in Sources */,
+				CE597BCB29F6BF9F00276B64 /* DiscoverMovieByGenreDomain.swift in Sources */,
 				CE8448F929B67A6E00231703 /* Box.swift in Sources */,
 				CE8449B529B688F900231703 /* MovieByGenreVM.swift in Sources */,
+				CE597C0229F6C1F400276B64 /* GetMovieByGenreUseCaseImpl.swift in Sources */,
 				CE8449F129B7096E00231703 /* MovieReviewView.swift in Sources */,
 				CE84492829B67DB800231703 /* GenreResponse.swift in Sources */,
 				CE8449D329B689DC00231703 /* MovieTrailerVM.swift in Sources */,
