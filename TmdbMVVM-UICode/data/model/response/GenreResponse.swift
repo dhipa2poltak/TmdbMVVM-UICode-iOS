@@ -18,3 +18,13 @@ class GenreResponse: Codable {
         self.genres = genres
     }
 }
+
+extension GenreResponse {
+    func toDomain() -> GenreDomain {
+        let genreEntities = genres?.map { (genre) -> GenreEntity in
+            return GenreEntity(id: genre.id ?? -1, name: genre.name ?? "")
+        }
+
+        return GenreDomain(genres: genreEntities ?? [])
+    }
+}

@@ -116,3 +116,14 @@ class MovieDetailsResponse: Codable {
         self.voteCount = voteCount
     }
 }
+
+extension MovieDetailsResponse {
+    func toDomain() -> MovieDetailsDomain {
+        return MovieDetailsDomain(
+            id: self.id ?? -1,
+            overview: self.overview ?? "",
+            title: self.title ?? "",
+            imageUrl: (!(posterPath?.isEmpty ?? true)) ? BuildConfiguration.shared.IMAGE_URL_BASE_PATH + (posterPath ?? "") : ""
+        )
+    }
+}
