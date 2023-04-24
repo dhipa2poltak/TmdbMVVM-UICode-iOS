@@ -93,7 +93,7 @@ class MovieDetailVC: BaseVC {
     @IBAction func onClickShowReview(_ sender: UIButton) {
         if let viewModel = viewModel {
             let movieId = viewModel.movieId
-            let movieTitle = viewModel.movieDetailsResponse?.title ?? "unknown"
+            let movieTitle = viewModel.movieDetailsDomain?.title ?? "unknown"
 
             coordinator?.showMovieReview(movieId: movieId, movieTitle: movieTitle)
         }

@@ -10,30 +10,29 @@ import RxSwift
 
 class MovieTrailerVM: BaseVM {
 
-    private let apiClient: ApiClient?
+    private let getMovieTrailerUseCase: GetMovieTrailerUseCase?
     private let disposeBag = DisposeBag()
 
     var movieId = -1
     let movieKey = Box("")
 
-    init(apiClient: ApiClient?) {
-        self.apiClient = apiClient
+    init(getMovieTrailerUseCase: GetMovieTrailerUseCase?) {
+        self.getMovieTrailerUseCase = getMovieTrailerUseCase
     }
 
     func fetchMovieTrailer(movieId: Int) {
         isShowDialogLoading.value = true
 
-        apiClient?.fetchMovieTrailer(movieId: movieId)
+        getMovieTrailerUseCase?.call(movieId: movieId)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false
 
-                if let trailers = response.results {
-                    for trailer in trailers {
-                        if trailer.site?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "youtube" {
-                            self?.movieKey.value = trailer.key ?? ""
-                            break
-                        }
+                let trailers = response.results
+                for trailer in trailers {
+                    if trailer.site.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "youtube" {
+                        self?.movieKey.value = trailer.key
+                        break
                     }
                 }
             }, onError: { [weak self] error in

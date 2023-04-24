@@ -28,12 +28,54 @@ class AppCoordinator: Coordinator {
             ApiClient()
         }.inObjectScope(.container)
 
+        if let apiClient = container.resolve(ApiClient.self) {
+            self.container.register(AppDataSource.self) { _ in
+                return RemoteDataSourceImpl(apiClient: apiClient)
+            }.inObjectScope(.container)
+        }
+
+        if let appDataSource = container.resolve(AppDataSource.self) {
+            self.container.register(AppRepository.self) { _ in
+                return AppRepositoryImpl(appDataSource: appDataSource)
+            }.inObjectScope(.container)
+        }
+
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieGenreUseCase.self) { _ in
+                return GetMovieGenreUseCaseImpl(appRepository: appRepository)
+            }
+        }
+
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieByGenreUseCase.self) { _ in
+                return GetMovieByGenreUseCaseImpl(appRepository: appRepository)
+            }
+        }
+
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieDetailsUseCase.self) { _ in
+                return GetMovieDetailsUseCaseImpl(appRepository: appRepository)
+            }
+        }
+
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieReviewUseCase.self) { _ in
+                return GetMovieReviewUseCaseImpl(appRepository: appRepository)
+            }
+        }
+
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieTrailerUseCase.self) { _ in
+                return GetMovieTrailerUseCaseImpl(appRepository: appRepository)
+            }
+        }
+
         self.container.register(GenreVM.self) { resolver in
-            GenreVM(apiClient: resolver.resolve(ApiClient.self))
+            GenreVM(getMovieGenreUseCase: resolver.resolve(GetMovieGenreUseCase.self))
         }
 
         self.container.register(MovieByGenreVM.self) { (resolver, genreId: Int, genreName: String) in
-            let vm = MovieByGenreVM(apiClient: resolver.resolve(ApiClient.self))
+            let vm = MovieByGenreVM(getMovieByGenreUseCase: resolver.resolve(GetMovieByGenreUseCase.self))
             vm.genreId = genreId
             vm.genreName = genreName
 
@@ -41,14 +83,14 @@ class AppCoordinator: Coordinator {
         }
 
         self.container.register(MovieDetailVM.self) { (resolver, movieId: Int) in
-            let vm = MovieDetailVM(apiClient: resolver.resolve(ApiClient.self))
+            let vm = MovieDetailVM(getMovieDetailsUseCase: resolver.resolve(GetMovieDetailsUseCase.self))
             vm.movieId = movieId
 
             return vm
         }
 
         self.container.register(MovieReviewVM.self) { (resolver, movieId: Int, movieTitle: String) in
-            let vm = MovieReviewVM(apiClient: resolver.resolve(ApiClient.self))
+            let vm = MovieReviewVM(getMovieReviewUseCase: resolver.resolve(GetMovieReviewUseCase.self))
             vm.movieId = movieId
             vm.movieTitle = movieTitle
 
@@ -56,7 +98,7 @@ class AppCoordinator: Coordinator {
         }
 
         self.container.register(MovieTrailerVM.self) { (resolver, movieId: Int) in
-            let vm = MovieTrailerVM(apiClient: resolver.resolve(ApiClient.self))
+            let vm = MovieTrailerVM(getMovieTrailerUseCase: resolver.resolve(GetMovieTrailerUseCase.self))
             vm.movieId = movieId
 
             return vm

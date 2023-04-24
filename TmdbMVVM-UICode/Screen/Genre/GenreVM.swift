@@ -10,14 +10,14 @@ import RxSwift
 
 class GenreVM: BaseVM {
 
-    private let apiClient: ApiClient?
+    private let getMovieGenreUseCase: GetMovieGenreUseCase?
     private let disposeBag = DisposeBag()
 
-    var genres: [Genre]?
+    var genres: [GenreEntity]?
     let genreData: Box<Bool?> = Box(false)
 
-    init(apiClient: ApiClient?) {
-        self.apiClient = apiClient
+    init(getMovieGenreUseCase: GetMovieGenreUseCase?) {
+        self.getMovieGenreUseCase = getMovieGenreUseCase
     }
     
     func loadData() {
@@ -27,15 +27,15 @@ class GenreVM: BaseVM {
     func fetchMovieGenre() {
         isShowDialogLoading.value = true
 
-        apiClient?.fetchMovieGenre()
+        getMovieGenreUseCase?.call()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false
 
-                if let genres = response.genres {
-                    self?.genres = genres
-                    self?.genreData.value = true
-                }
+                let genres = response.genres
+                self?.genres = genres
+                self?.genreData.value = true
+
             }, onError: { [weak self ] error in
                 self?.isShowDialogLoading.value = false
 
