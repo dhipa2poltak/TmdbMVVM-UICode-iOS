@@ -15,8 +15,7 @@ class GenreVC: BaseVC {
     var viewModel: GenreVM?
     weak var coordinator: AppCoordinator?
 
-    private let nbName = "SingleRowTVC"
-    private let cellId = "SingleRowTVC"
+    private let cellId = "GenreContentTVC"
 
     private lazy var refreshControl: UIRefreshControl = {
         let rc = UIRefreshControl()
@@ -50,7 +49,7 @@ class GenreVC: BaseVC {
         vw.tableVw.dataSource = self
         vw.tableVw.delegate = self
 
-        vw.tableVw.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        vw.tableVw.register(GenreContentTVC.self, forCellReuseIdentifier: cellId)
     }
 
     private func setupObserver() {
@@ -95,12 +94,11 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.accessoryType = .disclosureIndicator
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GenreContentTVC
         cell.selectionStyle = .none
 
         if let genre = viewModel?.genres?[indexPath.row] {
-            cell.textLabel?.text = genre.name ?? ""
+            cell.bindData(genreName: genre.name)
         }
 
         return cell

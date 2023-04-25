@@ -29,11 +29,13 @@ class MovieReviewView: ProgrammaticView {
         addConstrainedSubViews(lblTitleMovie, lblTitleReview, tableVw)
 
         NSLayoutConstraint.activate([
-            lblTitleMovie.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
-            lblTitleMovie.centerXAnchor.constraint(equalTo: centerXAnchor),
-            lblTitleReview.topAnchor.constraint(equalTo: lblTitleMovie.bottomAnchor, constant: 8),
+            lblTitleReview.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             lblTitleReview.centerXAnchor.constraint(equalTo: centerXAnchor),
-            tableVw.topAnchor.constraint(equalTo: lblTitleReview.bottomAnchor, constant: 8),
+
+            lblTitleMovie.topAnchor.constraint(equalTo: lblTitleReview.bottomAnchor, constant: 8),
+            lblTitleMovie.centerXAnchor.constraint(equalTo: centerXAnchor),
+
+            tableVw.topAnchor.constraint(equalTo: lblTitleMovie.bottomAnchor, constant: 8),
             tableVw.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableVw.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableVw.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)

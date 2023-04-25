@@ -34,6 +34,10 @@
 		CE597C3629F6C8A900276B64 /* AppDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C3529F6C8A900276B64 /* AppDataSource.swift */; };
 		CE597C3E29F6C8D300276B64 /* AppRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C3D29F6C8D300276B64 /* AppRepositoryImpl.swift */; };
 		CE597C5929F6CB4800276B64 /* RemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C5829F6CB4800276B64 /* RemoteDataSourceImpl.swift */; };
+		CE597C5F29F7869C00276B64 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C5E29F7869C00276B64 /* MovieView.swift */; };
+		CE597C6429F7891B00276B64 /* MovieTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C6329F7891B00276B64 /* MovieTVC.swift */; };
+		CE597C6D29F7932600276B64 /* GenreContentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C6C29F7932600276B64 /* GenreContentTVC.swift */; };
+		CE597C7529F7933500276B64 /* GenreContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C7429F7933500276B64 /* GenreContentView.swift */; };
 		CE8448A729B678F200231703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8448A629B678F200231703 /* AppDelegate.swift */; };
 		CE8448AB29B678F200231703 /* GenreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8448AA29B678F200231703 /* GenreVC.swift */; };
 		CE8448B029B678FF00231703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8448AF29B678FF00231703 /* Assets.xcassets */; };
@@ -141,6 +145,10 @@
 		CE597C3529F6C8A900276B64 /* AppDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSource.swift; sourceTree = "<group>"; };
 		CE597C3D29F6C8D300276B64 /* AppRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepositoryImpl.swift; sourceTree = "<group>"; };
 		CE597C5829F6CB4800276B64 /* RemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceImpl.swift; sourceTree = "<group>"; };
+		CE597C5E29F7869C00276B64 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		CE597C6329F7891B00276B64 /* MovieTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTVC.swift; sourceTree = "<group>"; };
+		CE597C6C29F7932600276B64 /* GenreContentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreContentTVC.swift; sourceTree = "<group>"; };
+		CE597C7429F7933500276B64 /* GenreContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreContentView.swift; sourceTree = "<group>"; };
 		CE8448A329B678F200231703 /* TmdbMVVM-UICode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TmdbMVVM-UICode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8448A629B678F200231703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8448AA29B678F200231703 /* GenreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreVC.swift; sourceTree = "<group>"; };
@@ -408,6 +416,24 @@
 			path = rest;
 			sourceTree = "<group>";
 		};
+		CE597C5D29F7868400276B64 /* MovieTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE597C6329F7891B00276B64 /* MovieTVC.swift */,
+				CE597C5E29F7869C00276B64 /* MovieView.swift */,
+			);
+			path = MovieTVC;
+			sourceTree = "<group>";
+		};
+		CE597C6B29F7931100276B64 /* GenreTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE597C6C29F7932600276B64 /* GenreContentTVC.swift */,
+				CE597C7429F7933500276B64 /* GenreContentView.swift */,
+			);
+			path = GenreTVC;
+			sourceTree = "<group>";
+		};
 		CE84489A29B678F200231703 = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +567,8 @@
 		CE84490A29B67B2B00231703 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				CE597C6B29F7931100276B64 /* GenreTVC */,
+				CE597C5D29F7868400276B64 /* MovieTVC */,
 				CE8449FA29B70BA100231703 /* ReviewTVC */,
 			);
 			path = UIComponent;
@@ -847,6 +875,7 @@
 				CE597BEE29F6C0BE00276B64 /* TrailerDomain.swift in Sources */,
 				CE597C2029F6C2D500276B64 /* GetMovieReviewUseCaseImpl.swift in Sources */,
 				CE597BDA29F6C01D00276B64 /* MovieDetailsDomain.swift in Sources */,
+				CE597C6429F7891B00276B64 /* MovieTVC.swift in Sources */,
 				CE84494A29B67EEA00231703 /* AuthorDetails.swift in Sources */,
 				CE8449B029B688E700231703 /* MovieByGenreVC.swift in Sources */,
 				CE597BD029F6BFCB00276B64 /* GenreDomain.swift in Sources */,
@@ -858,6 +887,7 @@
 				CE8449AB29B6889F00231703 /* GenreVM.swift in Sources */,
 				CE597C1129F6C26900276B64 /* GetMovieGenreUseCase.swift in Sources */,
 				CE84493229B67E2300231703 /* SpokenLanguage.swift in Sources */,
+				CE597C7529F7933500276B64 /* GenreContentView.swift in Sources */,
 				CE84491129B67CA700231703 /* UIColor+Ext.swift in Sources */,
 				CE84492D29B67DF800231703 /* Movie.swift in Sources */,
 				CE8448AB29B678F200231703 /* GenreVC.swift in Sources */,
@@ -875,6 +905,7 @@
 				CE84492329B67D8100231703 /* DiscoverMovieByGenreResponse.swift in Sources */,
 				CE597C1B29F6C2B100276B64 /* GetMovieReviewUseCase.swift in Sources */,
 				CE844A0429B70BCB00231703 /* ReviewView.swift in Sources */,
+				CE597C5F29F7869C00276B64 /* MovieView.swift in Sources */,
 				CE8449A629B6887100231703 /* ApiClient.swift in Sources */,
 				CE84490229B67AB000231703 /* BuildConfiguration.swift in Sources */,
 				CE8448F329B67A4100231703 /* BaseVM.swift in Sources */,
@@ -891,6 +922,7 @@
 				CE597BC329F6BF6F00276B64 /* AuthorDetailsEntity.swift in Sources */,
 				CE84495E29B67F8D00231703 /* TrailerResponse.swift in Sources */,
 				CE8449C429B6897800231703 /* MovieReviewVC.swift in Sources */,
+				CE597C6D29F7932600276B64 /* GenreContentTVC.swift in Sources */,
 				CE8449BA29B6893F00231703 /* MovieDetailVC.swift in Sources */,
 				CE8448A729B678F200231703 /* AppDelegate.swift in Sources */,
 				CE8449BF29B6894E00231703 /* MovieDetailVM.swift in Sources */,

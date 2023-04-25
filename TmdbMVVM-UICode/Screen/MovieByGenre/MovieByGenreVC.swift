@@ -16,8 +16,7 @@ class MovieByGenreVC: BaseVC {
     var viewModel: MovieByGenreVM?
     weak var coordinator: AppCoordinator?
 
-    private let nbName = "SingleRowTVC"
-    private let cellId = "SingleRowTVC"
+    private let cellId = "MovieTVC"
 
     override func loadView() {
         super.loadView()
@@ -36,7 +35,7 @@ class MovieByGenreVC: BaseVC {
         vw.tableVw.delegate = self
         vw.tableVw.dataSource = self
 
-        vw.tableVw.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        vw.tableVw.register(MovieTVC.self, forCellReuseIdentifier: cellId)
 
         vw.tableVw.reloadData()
     }
@@ -90,12 +89,11 @@ extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.accessoryType = .disclosureIndicator
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTVC
         cell.selectionStyle = .none
 
         let movie = viewModel?.movies[indexPath.row]
-        cell.textLabel?.text = movie?.title ?? ""
+        cell.bindData(imageUrl: movie?.imageUrl, title: movie?.title, overview: movie?.overview)
 
         return cell
     }

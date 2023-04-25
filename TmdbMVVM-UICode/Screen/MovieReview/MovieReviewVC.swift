@@ -15,7 +15,6 @@ class MovieReviewVC: BaseVC {
 
     var viewModel: MovieReviewVM?
 
-    private let nbName = "ReviewTVC"
     private let cellId = "ReviewTVC"
 
     override func loadView() {
