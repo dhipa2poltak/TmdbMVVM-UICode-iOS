@@ -149,7 +149,7 @@
 		CE597C6329F7891B00276B64 /* MovieTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTVC.swift; sourceTree = "<group>"; };
 		CE597C6C29F7932600276B64 /* GenreContentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreContentTVC.swift; sourceTree = "<group>"; };
 		CE597C7429F7933500276B64 /* GenreContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreContentView.swift; sourceTree = "<group>"; };
-		CE8448A329B678F200231703 /* TmdbMVVM-UICode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TmdbMVVM-UICode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE8448A329B678F200231703 /* TmdbMVVM-UICode (Staging-Debug).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TmdbMVVM-UICode (Staging-Debug).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8448A629B678F200231703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8448AA29B678F200231703 /* GenreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreVC.swift; sourceTree = "<group>"; };
 		CE8448AF29B678FF00231703 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -449,7 +449,7 @@
 		CE8448A429B678F200231703 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE8448A329B678F200231703 /* TmdbMVVM-UICode.app */,
+				CE8448A329B678F200231703 /* TmdbMVVM-UICode (Staging-Debug).app */,
 				CE8448B929B678FF00231703 /* TmdbMVVM-UICodeTests.xctest */,
 				CE8448C429B678FF00231703 /* TmdbMVVM-UICodeUITests.xctest */,
 			);
@@ -652,7 +652,7 @@
 			);
 			name = "TmdbMVVM-UICode";
 			productName = "TmdbMVVM-UICode";
-			productReference = CE8448A329B678F200231703 /* TmdbMVVM-UICode.app */;
+			productReference = CE8448A329B678F200231703 /* TmdbMVVM-UICode (Staging-Debug).app */;
 			productType = "com.apple.product-type.application";
 		};
 		CE8448B829B678FF00231703 /* TmdbMVVM-UICodeTests */ = {
@@ -1116,8 +1116,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.staging.debug";
+				PRODUCT_NAME = "TmdbMVVM-UICode (Staging-Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1136,8 +1136,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.staging";
+				PRODUCT_NAME = "TmdbMVVM-UICode (Staging)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1305,8 +1305,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode.debug";
+				PRODUCT_NAME = "TmdbMVVM-UICode (Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1430,8 +1430,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.verify.debug";
+				PRODUCT_NAME = "TmdbMVVM-UICode (Verify-Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1549,8 +1549,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.verify";
+				PRODUCT_NAME = "TmdbMVVM-UICode (Verify)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1669,7 +1669,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TmdbMVVM-UICode";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
