@@ -21,6 +21,11 @@ class MovieTrailerVM: BaseVM {
     }
 
     func fetchMovieTrailer(movieId: Int) {
+        guard getMovieTrailerUseCase != nil else {
+            self.errorMessage.value = "error dependency"
+            return
+        }
+
         isShowDialogLoading.value = true
 
         getMovieTrailerUseCase?.call(movieId: movieId)
@@ -38,7 +43,7 @@ class MovieTrailerVM: BaseVM {
             }, onError: { [weak self] error in
                 self?.isShowDialogLoading.value = false
 
-                self?.toastMessage.value = "error: \(error.localizedDescription)"
+                self?.errorMessage.value = "error: \(error.localizedDescription)"
             }).disposed(by: disposeBag)
     }
 }

@@ -25,6 +25,11 @@ class GenreVM: BaseVM {
     }
 
     func fetchMovieGenre() {
+        guard getMovieGenreUseCase != nil else {
+            self.errorMessage.value = "error dependency"
+            return
+        }
+
         isShowDialogLoading.value = true
 
         getMovieGenreUseCase?.call()
@@ -39,7 +44,7 @@ class GenreVM: BaseVM {
             }, onError: { [weak self ] error in
                 self?.isShowDialogLoading.value = false
 
-                self?.toastMessage.value = "error: \(error.localizedDescription)"
+                self?.errorMessage.value = "error: \(error.localizedDescription)"
             }).disposed(by: disposeBag)
     }
 }

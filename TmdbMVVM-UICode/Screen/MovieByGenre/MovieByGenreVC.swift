@@ -9,11 +9,10 @@ import Foundation
 import SVProgressHUD
 import UIKit
 
-class MovieByGenreVC: BaseVC {
+class MovieByGenreVC: BaseVC<MovieByGenreVM> {
 
     let vw = MovieByGenreView()
 
-    var viewModel: MovieByGenreVM?
     weak var coordinator: AppCoordinator?
 
     private let cellId = "MovieTVC"
@@ -40,19 +39,14 @@ class MovieByGenreVC: BaseVC {
         vw.tableVw.reloadData()
     }
 
-    private func setupObserver() {
+    override func setupObserver() {
+        super.setupObserver()
+
         viewModel?.isShowDialogLoading.bind { [weak self] value in
             if value && self?.viewModel?.movies.isEmpty ?? true {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
-            }
-        }
-
-        viewModel?.toastMessage.bind { [weak self] value in
-            if !value.isEmpty {
-                self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
-                self?.viewModel?.toastMessage.value = ""
             }
         }
 

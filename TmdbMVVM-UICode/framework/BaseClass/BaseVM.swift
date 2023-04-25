@@ -12,5 +12,5 @@ class BaseVM: NSObject {
     let isShowDialogLoading = Box(false)
     var isLoadingData = false
 
-    let toastMessage = Box("")
+    let errorMessage = Box("")
 }

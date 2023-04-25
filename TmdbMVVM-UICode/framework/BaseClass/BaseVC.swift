@@ -8,12 +8,23 @@
 import Foundation
 import UIKit
 
-class BaseVC: UIViewController {
+class BaseVC<T: BaseVM>: UIViewController {
+
+    var viewModel: T?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
+        }
+    }
+
+    func setupObserver() {
+        viewModel?.errorMessage.bind { [weak self] errorMessage in
+            if !errorMessage.isEmpty {
+                self?.showErrorMessage(errorMessage: errorMessage)
+                self?.viewModel?.errorMessage.value = ""
+            }
         }
     }
 
@@ -48,5 +59,12 @@ class BaseVC: UIViewController {
 
     @objc func didTapBack(_: Any) {
         navigationController?.popViewController(animated: true)
+    }
+
+    func showErrorMessage(errorMessage: String) {
+        let alert = UIAlertController(title: "Message", message: errorMessage, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
     }
 }

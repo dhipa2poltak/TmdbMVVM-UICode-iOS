@@ -10,11 +10,9 @@ import SVProgressHUD
 import UIKit
 import YouTubePlayer
 
-class MovieTrailerVC: BaseVC, YouTubePlayerDelegate {
+class MovieTrailerVC: BaseVC<MovieTrailerVM>, YouTubePlayerDelegate {
 
     let vw = MovieTrailerView()
-
-    var viewModel: MovieTrailerVM?
 
     override func loadView() {
         super.loadView()
@@ -38,19 +36,14 @@ class MovieTrailerVC: BaseVC, YouTubePlayerDelegate {
         }
     }
 
-    private func setupObserver() {
+    override func setupObserver() {
+        super.setupObserver()
+
         viewModel?.isShowDialogLoading.bind { value in
             if value {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
-            }
-        }
-
-        viewModel?.toastMessage.bind { [weak self] value in
-            if !value.isEmpty {
-                self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
-                self?.viewModel?.toastMessage.value = ""
             }
         }
 
