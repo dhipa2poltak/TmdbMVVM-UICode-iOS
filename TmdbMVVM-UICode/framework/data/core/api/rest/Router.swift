@@ -27,7 +27,9 @@ enum Router: URLRequestConvertible {
 
             let encodedURLRequest: URLRequest
 
-            if method == .post {
+            if method == .get {
+                encodedURLRequest = try URLEncoding.default.encode(urlRequest, with: param)
+            } else {
                 do {
                     urlRequest.httpBody = try JSON(param).rawData(options: .prettyPrinted)
                 } catch {
@@ -35,8 +37,6 @@ enum Router: URLRequestConvertible {
                 }
 
                 encodedURLRequest = try URLEncoding.default.encode(urlRequest, with: nil)
-            } else {
-                encodedURLRequest = try URLEncoding.default.encode(urlRequest, with: param)
             }
 
             return encodedURLRequest

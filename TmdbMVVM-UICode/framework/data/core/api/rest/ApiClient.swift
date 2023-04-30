@@ -36,6 +36,7 @@ class ApiClient {
         return Observable<T>.create { observer in
 
             let request = AF.request(urlConvertible)
+                .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):
