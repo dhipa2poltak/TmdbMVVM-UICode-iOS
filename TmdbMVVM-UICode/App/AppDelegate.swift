@@ -5,6 +5,9 @@
 //  Created by user on 07/03/23.
 //
 
+#if DEBUG
+    import AlamofireNetworkActivityLogger
+#endif
 import UIKit
 
 @main
@@ -15,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        #if DEBUG
+            NetworkActivityLogger.shared.level = .debug
+            NetworkActivityLogger.shared.startLogging()
+        #endif
+
         let navController = UINavigationController()
         coordinator = AppCoordinator(navigationController: navController)
         coordinator?.start()
