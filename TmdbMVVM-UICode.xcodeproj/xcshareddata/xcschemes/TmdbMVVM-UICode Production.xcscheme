@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE8448A229B678F200231703"
-               BuildableName = "TmdbMVVM-UICode.app"
+               BuildableName = "TmdbMVVM-UICode (Staging).app"
                BlueprintName = "TmdbMVVM-UICode"
                ReferencedContainer = "container:TmdbMVVM-UICode.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE8448A229B678F200231703"
-            BuildableName = "TmdbMVVM-UICode.app"
+            BuildableName = "TmdbMVVM-UICode (Staging).app"
             BlueprintName = "TmdbMVVM-UICode"
             ReferencedContainer = "container:TmdbMVVM-UICode.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE8448A229B678F200231703"
-            BuildableName = "TmdbMVVM-UICode.app"
+            BuildableName = "TmdbMVVM-UICode (Staging).app"
             BlueprintName = "TmdbMVVM-UICode"
             ReferencedContainer = "container:TmdbMVVM-UICode.xcodeproj">
          </BuildableReference>

@@ -24,14 +24,20 @@ enum Router: URLRequestConvertible {
         if let theUrl = url {
             var urlRequest = URLRequest(url: theUrl)
             urlRequest.httpMethod = method.rawValue
+
+            let encodedURLRequest: URLRequest
+
             if method == .post {
                 do {
                     urlRequest.httpBody = try JSON(param).rawData(options: .prettyPrinted)
                 } catch {
                     print("httpBody failed!")
                 }
+
+                encodedURLRequest = try URLEncoding.default.encode(urlRequest, with: nil)
+            } else {
+                encodedURLRequest = try URLEncoding.default.encode(urlRequest, with: param)
             }
-            let encodedURLRequest = try URLEncoding.default.encode(urlRequest, with: nil)
 
             return encodedURLRequest
         }
@@ -48,24 +54,36 @@ enum Router: URLRequestConvertible {
 
     var path: String {
         switch self {
-        case .fetchMovieGenre: return "3/genre/movie/list?api_key=\(BuildConfiguration.shared.API_KEY)"
-        case let .fetchMovieByGenre(genreId: genreId, page: page):
-            return "3/discover/movie?api_key=\(BuildConfiguration.shared.API_KEY)&with_genres=\(genreId)&page=\(page)"
-        case let .fetchMovieDetail(movieId: movieId):
-            return "3/movie/\(movieId)?api_key=\(BuildConfiguration.shared.API_KEY)&language=en-US"
-        case let .fetchMovieReviews(movieId: movieId, page: page):
-            return "3/movie/\(movieId)/reviews?api_key=\(BuildConfiguration.shared.API_KEY)&page=\(page)&language=en-US"
-        case let .fetchMovieTrailer(movieId: movieId):
-            return "3/movie/\(movieId)/videos?api_key=\(BuildConfiguration.shared.API_KEY)&language=en-US"
+        case .fetchMovieGenre: return "3/genre/movie/list"
+        case .fetchMovieByGenre(_, _):
+            return "3/discover/movie"
+        case let .fetchMovieDetail(movieId):
+            return "3/movie/\(movieId)"
+        case let .fetchMovieReviews(movieId, _):
+            return "3/movie/\(movieId)/reviews"
+        case let .fetchMovieTrailer(movieId):
+            return "3/movie/\(movieId)/videos"
         }
     }
 
     var param: Parameters {
-        let p = Parameters()
+        var p = Parameters()
+
+        p["api_key"] = BuildConfiguration.shared.API_KEY
 
         switch self {
-        default:
+        case .fetchMovieGenre:
             break
+        case let .fetchMovieByGenre(genreId, page):
+            p["with_genres"] = genreId
+            p["page"] = page
+        case .fetchMovieDetail(_):
+            p["language"] = "en-US"
+        case let .fetchMovieReviews(_, page):
+            p["page"] = page
+            p["language"] = "en-US"
+        case .fetchMovieTrailer(_):
+            p["language"] = "en-US"
         }
 
         return p
