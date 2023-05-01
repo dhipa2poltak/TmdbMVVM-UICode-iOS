@@ -289,6 +289,7 @@
 		CE597BBF29F6BECB00276B64 /* entity */ = {
 			isa = PBXGroup;
 			children = (
+				CE06275829FFB5D700398444 /* AppError.swift */,
 				CE597BC229F6BF6F00276B64 /* AuthorDetailsEntity.swift */,
 				CE597BCA29F6BF9F00276B64 /* DiscoverMovieByGenreDomain.swift */,
 				CE597BCF29F6BFCB00276B64 /* GenreDomain.swift */,
@@ -417,7 +418,6 @@
 				CE8449A529B6887100231703 /* ApiClient.swift */,
 				CE8449A029B6884000231703 /* Router.swift */,
 				CE06275329FFAEF700398444 /* ErrorResponse.swift */,
-				CE06275829FFB5D700398444 /* AppError.swift */,
 			);
 			path = rest;
 			sourceTree = "<group>";
