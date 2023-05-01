@@ -51,7 +51,6 @@ class ApiClient {
                             observer.onError(error)
                         }
                     case .failure(let error):
-                        //observer.onError(error)
                         if let data = response.data {
                             let value = String(data: data, encoding: String.Encoding.utf8)
                             let json = JSON(value ?? "")
