@@ -49,14 +49,14 @@ class MovieDetailVC: BaseVC<MovieDetailVM> {
 
         vw.btnShowReview.addTarget(self, action: #selector(onClickShowReview(_:)), for: .touchUpInside)
         vw.btnShowTrailer.addTarget(self, action: #selector(onClickShowTrailer(_:)), for: .touchUpInside)
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.setupNavBar()
 
         if let viewModel = viewModel {
             viewModel.fetchMovieDetail(movieId: viewModel.movieId)
         }
+    }
+
+    override func viewDidAppear(_: Bool) {
+        super.setupNavBar()
     }
 
 

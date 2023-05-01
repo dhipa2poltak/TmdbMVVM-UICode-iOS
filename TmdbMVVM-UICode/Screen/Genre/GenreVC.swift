@@ -36,6 +36,8 @@ class GenreVC: BaseVC<GenreVM> {
         print("Base URL: \(BuildConfiguration.shared.API_BASE_URL)")
         setupTableView()
         setupObserver()
+
+        viewModel?.loadData()
     }
 
     private func setupTableView() {
@@ -73,8 +75,6 @@ class GenreVC: BaseVC<GenreVM> {
 
     override func viewDidAppear(_: Bool) {
         super.setupNavBar()
-
-        viewModel?.loadData()
     }
 
     @objc private func didRefreshControl() {

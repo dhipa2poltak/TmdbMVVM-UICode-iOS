@@ -37,6 +37,10 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM> {
         vw.tableVw.register(MovieTVC.self, forCellReuseIdentifier: cellId)
 
         vw.tableVw.reloadData()
+
+        if let viewModel = viewModel {
+            viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: viewModel.page)
+        }
     }
 
     override func setupObserver() {
@@ -60,10 +64,6 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM> {
 
     override func viewDidAppear(_: Bool) {
         super.setupNavBar()
-
-        if let viewModel = viewModel {
-            viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: viewModel.page)
-        }
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView,
