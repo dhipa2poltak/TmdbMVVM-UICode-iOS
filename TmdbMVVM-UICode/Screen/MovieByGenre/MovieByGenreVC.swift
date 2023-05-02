@@ -24,6 +24,7 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupNavBar()
 
         if !(viewModel?.genreName.isEmpty ?? true) {
             vw.lblTitle.text = String(format: NSLocalizedString("key_title_movies_in_genre", comment: ""), viewModel?.genreName ?? "unknown")
@@ -60,10 +61,6 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM> {
                 self?.viewModel?.movieData.value = nil
             }
         }
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.setupNavBar()
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView,

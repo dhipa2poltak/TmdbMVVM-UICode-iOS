@@ -23,6 +23,7 @@ class MovieReviewVC: BaseVC<MovieReviewVM> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupNavBar()
 
         vw.lblTitleMovie.text = viewModel?.movieTitle ?? "unknown"
 
@@ -38,10 +39,6 @@ class MovieReviewVC: BaseVC<MovieReviewVM> {
         if let viewModel = viewModel {
             viewModel.fetchMovieReviews(movieId: viewModel.movieId, page: viewModel.page)
         }
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.setupNavBar()
     }
 
     override func setupObserver() {

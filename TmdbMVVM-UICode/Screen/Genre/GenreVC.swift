@@ -30,10 +30,12 @@ class GenreVC: BaseVC<GenreVM> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupNavBar()
         // Do any additional setup after loading the view.
         //view.backgroundColor = .red
         print("Current configuration: \(BuildConfiguration.shared.environment)")
         print("Base URL: \(BuildConfiguration.shared.API_BASE_URL)")
+
         setupTableView()
         setupObserver()
 
@@ -71,10 +73,6 @@ class GenreVC: BaseVC<GenreVM> {
                 self?.viewModel?.genreData.value = false
             }
         }
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.setupNavBar()
     }
 
     @objc private func didRefreshControl() {

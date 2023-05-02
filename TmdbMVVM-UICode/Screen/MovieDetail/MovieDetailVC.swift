@@ -44,6 +44,7 @@ class MovieDetailVC: BaseVC<MovieDetailVM> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupNavBar()
 
         setupObserver()
 
@@ -54,11 +55,6 @@ class MovieDetailVC: BaseVC<MovieDetailVM> {
             viewModel.fetchMovieDetail(movieId: viewModel.movieId)
         }
     }
-
-    override func viewDidAppear(_: Bool) {
-        super.setupNavBar()
-    }
-
 
     override func setupObserver() {
         super.setupObserver()
