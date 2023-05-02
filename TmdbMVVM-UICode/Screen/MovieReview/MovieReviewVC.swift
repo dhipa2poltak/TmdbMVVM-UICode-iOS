@@ -62,6 +62,7 @@ class MovieReviewVC: BaseVC<MovieReviewVM> {
 
                 let isEmpty = self?.viewModel?.reviews.isEmpty ?? true
                 self?.vw.tableVw.isHidden = isEmpty
+                self?.vw.lblNoReview.isHidden = !isEmpty
             }
         }
     }

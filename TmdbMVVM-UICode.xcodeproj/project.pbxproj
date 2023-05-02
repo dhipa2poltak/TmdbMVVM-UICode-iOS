@@ -12,6 +12,7 @@
 		5EA175CD3B8B523C40FCE502 /* Pods_TmdbMVVM_UICode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED282AD3922792308F832223 /* Pods_TmdbMVVM_UICode.framework */; };
 		CE06275429FFAEF700398444 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06275329FFAEF700398444 /* ErrorResponse.swift */; };
 		CE06275929FFB5D700398444 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06275829FFB5D700398444 /* AppError.swift */; };
+		CE06282E2A01214700398444 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0628302A01214700398444 /* Localizable.strings */; };
 		CE597BC329F6BF6F00276B64 /* AuthorDetailsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BC229F6BF6F00276B64 /* AuthorDetailsEntity.swift */; };
 		CE597BCB29F6BF9F00276B64 /* DiscoverMovieByGenreDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BCA29F6BF9F00276B64 /* DiscoverMovieByGenreDomain.swift */; };
 		CE597BD029F6BFCB00276B64 /* GenreDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597BCF29F6BFCB00276B64 /* GenreDomain.swift */; };
@@ -124,6 +125,9 @@
 		BBC22E1F00B2BA837837F2C7 /* Pods-TmdbMVVM-UICode-TmdbMVVM-UICodeUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-UICode-TmdbMVVM-UICodeUITests.release staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-UICode-TmdbMVVM-UICodeUITests/Pods-TmdbMVVM-UICode-TmdbMVVM-UICodeUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		CE06275329FFAEF700398444 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CE06275829FFB5D700398444 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		CE0628252A01212000398444 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE06282F2A01214700398444 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE0628342A01214C00398444 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE388B2061A89B978115FA4A /* Pods-TmdbMVVM-UICodeTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-UICodeTests.debug staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-UICodeTests/Pods-TmdbMVVM-UICodeTests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		CE597BC229F6BF6F00276B64 /* AuthorDetailsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetailsEntity.swift; sourceTree = "<group>"; };
 		CE597BCA29F6BF9F00276B64 /* DiscoverMovieByGenreDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMovieByGenreDomain.swift; sourceTree = "<group>"; };
@@ -502,6 +506,7 @@
 				CE84497029B6804C00231703 /* Coordinator.swift */,
 				CE84497529B6807A00231703 /* AppCoordinator.swift */,
 				CE8448B429B678FF00231703 /* Info.plist */,
+				CE0628302A01214700398444 /* Localizable.strings */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -729,6 +734,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = CE84489A29B678F200231703;
 			productRefGroup = CE8448A429B678F200231703 /* Products */;
@@ -748,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8448B329B678FF00231703 /* LaunchScreen.storyboard in Resources */,
+				CE06282E2A01214700398444 /* Localizable.strings in Resources */,
 				CE8448B029B678FF00231703 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -984,10 +991,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CE0628302A01214700398444 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE06282F2A01214700398444 /* id */,
+				CE0628342A01214C00398444 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		CE8448B129B678FF00231703 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CE8448B229B678FF00231703 /* Base */,
+				CE0628252A01212000398444 /* id */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -999,6 +1016,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1060,6 +1078,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1243,6 +1262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1368,6 +1388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1493,6 +1514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1612,6 +1634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

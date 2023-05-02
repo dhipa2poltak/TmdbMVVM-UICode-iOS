@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  TmdbMVVM-UICode
+
+  Created by user on 02/05/23.
+  
+*/
+
+"key_movie_genres" = "Movie Genres";
+"key_title_movies_in_genre" = "%@ Movies";
+"key_show_review" = "Show Review";
+"key_show_trailer" = "Show Trailer";
+"key_review" = "Review";
+"key_no_review_available" = "Currently no review available";

@@ -20,9 +20,9 @@ class MovieDetailView: ProgrammaticView {
         lblTitleMovie.font = .systemFont(ofSize: 20, weight: .bold)
         lblDesc.numberOfLines = 0
 
-        btnShowReview.setTitle("Show Review", for: .normal)
+        btnShowReview.setTitle(NSLocalizedString("key_show_review", comment: ""), for: .normal)
         btnShowReview.setTitleColor(.systemBlue, for: .normal)
-        btnShowTrailer.setTitle("Show Trailer", for: .normal)
+        btnShowTrailer.setTitle(NSLocalizedString("key_show_trailer", comment: ""), for: .normal)
         btnShowTrailer.setTitleColor(.systemBlue, for: .normal)
     }
 

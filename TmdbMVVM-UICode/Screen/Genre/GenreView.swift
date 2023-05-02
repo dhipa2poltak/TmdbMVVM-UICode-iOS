@@ -16,7 +16,7 @@ class GenreView: ProgrammaticView {
     override func configure() {
         backgroundColor = .white
 
-        lblTitle.text = "Movie Genre"
+        lblTitle.text = NSLocalizedString("key_movie_genres", comment: "")
         lblTitle.font = .systemFont(ofSize: 20, weight: .bold)
 
         tableVw.backgroundColor = .clear

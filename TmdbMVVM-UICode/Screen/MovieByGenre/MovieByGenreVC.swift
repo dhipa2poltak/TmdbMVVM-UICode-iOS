@@ -26,7 +26,7 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM> {
         super.viewDidLoad()
 
         if !(viewModel?.genreName.isEmpty ?? true) {
-            vw.lblTitle.text = "Genre \(viewModel?.genreName ?? "unknown") Movies"
+            vw.lblTitle.text = String(format: NSLocalizedString("key_title_movies_in_genre", comment: ""), viewModel?.genreName ?? "unknown")
         }
 
         setupObserver()
