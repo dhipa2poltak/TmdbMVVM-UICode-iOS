@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-class BaseVC<T: BaseVM>: UIViewController {
+open class BaseVC<T: BaseVM>: UIViewController {
 
-    var viewModel: T?
+    public var viewModel: T?
 
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         }
     }
 
-    func setupObserver() {
+    open func setupObserver() {
         viewModel?.errorMessage.bind { [weak self] errorMessage in
             if !errorMessage.isEmpty {
                 self?.showErrorMessage(errorMessage: errorMessage)
@@ -28,7 +28,7 @@ class BaseVC<T: BaseVM>: UIViewController {
         }
     }
 
-    func setupNavBar(title: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String) {
+    public func setupNavBar(title: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String) {
         guard let navController = navigationController else { return }
 
         navController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black,
@@ -57,11 +57,11 @@ class BaseVC<T: BaseVM>: UIViewController {
         self.navigationItem.titleView = label
     }
 
-    @objc func didTapBack(_: Any) {
+    @objc public func didTapBack(_: Any) {
         navigationController?.popViewController(animated: true)
     }
 
-    func showErrorMessage(errorMessage: String) {
+    public func showErrorMessage(errorMessage: String) {
         let alert = UIAlertController(title: "Message", message: errorMessage, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
 

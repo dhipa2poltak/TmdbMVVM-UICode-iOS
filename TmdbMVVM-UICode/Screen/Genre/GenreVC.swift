@@ -7,6 +7,7 @@
 
 import SVProgressHUD
 import UIKit
+import app_framework
 
 class GenreVC: BaseVC<GenreVM> {
 

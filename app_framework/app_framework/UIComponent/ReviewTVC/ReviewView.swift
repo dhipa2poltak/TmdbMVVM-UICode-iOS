@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-class ReviewView: ProgrammaticView {
+public class ReviewView: ProgrammaticView {
 
-    let lblContent = UILabel()
-    let ivAuthor = UIImageView()
-    let lblAuthor = UILabel()
+    public let lblContent = UILabel()
+    public let ivAuthor = UIImageView()
+    public let lblAuthor = UILabel()
 
-    override func configure() {
+    public override func configure() {
         lblContent.numberOfLines = 0
         lblAuthor.textAlignment = .right
     }
 
-    override func constrain() {
+    public override func constrain() {
         addConstrainedSubViews(lblContent, ivAuthor, lblAuthor)
 
         NSLayoutConstraint.activate([

@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import app_framework
 import domain
 
 class MovieTrailerVM: BaseVM {

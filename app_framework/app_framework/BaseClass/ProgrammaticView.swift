@@ -8,24 +8,24 @@
 import Foundation
 import UIKit
 
-class ProgrammaticView: UIView {
+open class ProgrammaticView: UIView {
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
 
         configure()
         constrain()
     }
 
-    func configure() {
+    open func configure() {
 
     }
 
-    func constrain() {
+    open func constrain() {
 
     }
 }

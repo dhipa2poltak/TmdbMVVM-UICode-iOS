@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-class GenreContentView: ProgrammaticView {
+public class GenreContentView: ProgrammaticView {
 
-    let lblGenre = UILabel()
+    public let lblGenre = UILabel()
 
-    override func configure() {
+    public override func configure() {
 
     }
 
-    override func constrain() {
+    public override func constrain() {
         addConstrainedSubViews(lblGenre)
 
         NSLayoutConstraint.activate([

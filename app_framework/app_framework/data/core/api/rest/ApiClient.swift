@@ -12,7 +12,9 @@ import SwiftyJSON
 import data
 import domain
 
-class ApiClient {
+public class ApiClient {
+
+    public init() {}
 
     func fetchMovieGenre() -> Observable<GenreResponse> {
         request(Router.fetchMovieGenre)

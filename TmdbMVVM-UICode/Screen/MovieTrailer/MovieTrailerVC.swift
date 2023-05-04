@@ -9,6 +9,7 @@ import Foundation
 import SVProgressHUD
 import UIKit
 import YouTubePlayer
+import app_framework
 
 class MovieTrailerVC: BaseVC<MovieTrailerVM>, YouTubePlayerDelegate {
 

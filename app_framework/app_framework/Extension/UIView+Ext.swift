@@ -14,7 +14,7 @@ extension UIView {
         addSubview(view)
     }
 
-    func addConstrainedSubViews(_ views: UIView...) {
+    public func addConstrainedSubViews(_ views: UIView...) {
         views.forEach { view in addConstrainedSubView(view) }
     }
 }

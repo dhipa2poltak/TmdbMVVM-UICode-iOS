@@ -7,6 +7,7 @@
 
 import Swinject
 import UIKit
+import app_framework
 import data
 import domain
 

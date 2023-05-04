@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import YouTubePlayer
+import app_framework
 
 class MovieTrailerView: ProgrammaticView {
 

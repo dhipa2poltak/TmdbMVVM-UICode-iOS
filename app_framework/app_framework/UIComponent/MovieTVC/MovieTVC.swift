@@ -1,16 +1,17 @@
 //
-//  GenreTVC.swift
+//  MovieTVC.swift
 //  TmdbMVVM-UICode
 //
 //  Created by user on 25/04/23.
 //
 
 import Foundation
+import Kingfisher
 import UIKit
 
-class GenreContentTVC: UITableViewCell {
+public class MovieTVC: UITableViewCell {
 
-    private let vw = GenreContentView()
+    public let vw = MovieView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,7 +36,12 @@ class GenreContentTVC: UITableViewCell {
         ])
     }
 
-    func bindData(genreName: String?) {
-        vw.lblGenre.text = genreName
+    public func bindData(imageUrl: String?, title: String?, overview: String?) {
+        if let imageUrl = imageUrl, !imageUrl.isEmpty {
+            vw.ivMovie.kf.setImage(with: URL(string: imageUrl))
+        }
+
+        vw.lblTitle.text = title
+        vw.lblOverview.text = overview
     }
 }

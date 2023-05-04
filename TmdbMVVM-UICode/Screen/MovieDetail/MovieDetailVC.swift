@@ -9,6 +9,7 @@ import Foundation
 import Kingfisher
 import SVProgressHUD
 import UIKit
+import app_framework
 
 class MovieDetailVC: BaseVC<MovieDetailVM> {
 

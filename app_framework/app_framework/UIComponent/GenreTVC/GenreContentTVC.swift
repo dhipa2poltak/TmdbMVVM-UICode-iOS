@@ -1,18 +1,16 @@
 //
-//  ReviewTVC.swift
+//  GenreTVC.swift
 //  TmdbMVVM-UICode
 //
-//  Created by user on 07/03/23.
+//  Created by user on 25/04/23.
 //
 
 import Foundation
-import Kingfisher
 import UIKit
-import domain
 
-class ReviewTVC: UITableViewCell {
+public class GenreContentTVC: UITableViewCell {
 
-    private let vw = ReviewView()
+    public let vw = GenreContentView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,10 +23,10 @@ class ReviewTVC: UITableViewCell {
 
     private func initView() {
         selectionStyle = .none
-        
+
         contentView.addSubview(vw)
         vw.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             vw.topAnchor.constraint(equalTo: contentView.topAnchor),
             vw.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -37,13 +35,7 @@ class ReviewTVC: UITableViewCell {
         ])
     }
 
-    func bindData(review: ReviewEntity) {
-        vw.lblContent.text = review.content
-
-        if let avatarPath = review.authorDetails?.avatarPath {
-            vw.ivAuthor.kf.setImage(with: URL(string: avatarPath))
-        }
-
-        vw.lblAuthor.text = review.author
+    public func bindData(genreName: String?) {
+        vw.lblGenre.text = genreName
     }
 }

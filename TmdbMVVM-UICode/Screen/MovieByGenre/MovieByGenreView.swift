@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import app_framework
 
 class MovieByGenreView: ProgrammaticView {
 

@@ -8,6 +8,7 @@
 import Foundation
 import SVProgressHUD
 import UIKit
+import app_framework
 
 class MovieReviewVC: BaseVC<MovieReviewVM> {
 

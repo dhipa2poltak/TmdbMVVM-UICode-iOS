@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Environment: String {
+public enum Environment: String {
     case debugStaging = "Debug Staging"
     case releaseStaging = "Release Staging"
 
@@ -18,12 +18,12 @@ enum Environment: String {
     case releaseProduction = "Release Production"
 }
 
-class BuildConfiguration {
-    static let shared = BuildConfiguration()
+public class BuildConfiguration {
+    public static let shared = BuildConfiguration()
 
-    var environment: Environment
+    public var environment: Environment
 
-    var API_BASE_URL: String {
+    public var API_BASE_URL: String {
         switch environment {
         case .debugStaging, .releaseStaging:
             return "https://api.themoviedb.org/"
@@ -34,10 +34,10 @@ class BuildConfiguration {
         }
     }
 
-    let IMAGE_URL_BASE_PATH = "https://image.tmdb.org/t/p/w342//"
-    let API_KEY = "bf5c57d57d1c81706c6ef4794e8d753e"
+    public let IMAGE_URL_BASE_PATH = "https://image.tmdb.org/t/p/w342//"
+    public let API_KEY = "bf5c57d57d1c81706c6ef4794e8d753e"
 
-    init() {
+    public init() {
         let currentConfiguration = Bundle.main.object(forInfoDictionaryKey: "Configuration") as! String
 
         environment = Environment(rawValue: currentConfiguration)!
