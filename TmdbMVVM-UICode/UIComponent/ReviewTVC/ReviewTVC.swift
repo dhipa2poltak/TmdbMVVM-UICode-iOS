@@ -8,6 +8,7 @@
 import Foundation
 import Kingfisher
 import UIKit
+import domain
 
 class ReviewTVC: UITableViewCell {
 

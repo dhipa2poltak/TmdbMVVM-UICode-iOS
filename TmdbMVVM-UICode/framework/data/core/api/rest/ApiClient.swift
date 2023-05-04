@@ -9,6 +9,8 @@ import Alamofire
 import Foundation
 import RxSwift
 import SwiftyJSON
+import data
+import domain
 
 class ApiClient {
 
