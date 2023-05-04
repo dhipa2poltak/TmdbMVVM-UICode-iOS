@@ -12,9 +12,9 @@
 		5EA175CD3B8B523C40FCE502 /* Pods_TmdbMVVM_UICode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED282AD3922792308F832223 /* Pods_TmdbMVVM_UICode.framework */; };
 		CE06275429FFAEF700398444 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06275329FFAEF700398444 /* ErrorResponse.swift */; };
 		CE06282E2A01214700398444 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0628302A01214700398444 /* Localizable.strings */; };
-		CE062C7C2A02C37300398444 /* domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE06299E2A02876B00398444 /* domain.framework */; };
-		CE062E9F2A02E14100398444 /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE062E3A2A02DA4A00398444 /* data.framework */; };
-		CE062EA02A02E14100398444 /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE062E3A2A02DA4A00398444 /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE062EFA2A03A91A00398444 /* domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE062EF92A03A91A00398444 /* domain.framework */; };
+		CE062EFD2A03A93300398444 /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE062EFB2A03A92400398444 /* data.framework */; };
+		CE062EFE2A03A93300398444 /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE062EFB2A03A92400398444 /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE597C5929F6CB4800276B64 /* RemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C5829F6CB4800276B64 /* RemoteDataSourceImpl.swift */; };
 		CE597C5F29F7869C00276B64 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C5E29F7869C00276B64 /* MovieView.swift */; };
 		CE597C6429F7891B00276B64 /* MovieTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE597C6329F7891B00276B64 /* MovieTVC.swift */; };
@@ -57,34 +57,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CE06299D2A02876B00398444 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE0629992A02876900398444 /* domain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CE06298E2A02876900398444;
-			remoteInfo = domain;
-		};
-		CE062D682A02CC5900398444 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE0629992A02876900398444 /* domain.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = CE06298D2A02876900398444;
-			remoteInfo = domain;
-		};
-		CE062E392A02DA4A00398444 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE0629F72A02892000398444 /* data.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CE0629EC2A02892000398444;
-			remoteInfo = data;
-		};
-		CE062E992A02DE6D00398444 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE0629F72A02892000398444 /* data.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = CE0629EB2A02892000398444;
-			remoteInfo = data;
-		};
 		CE8448BA29B678FF00231703 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE84489B29B678F200231703 /* Project object */;
@@ -108,7 +80,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CE062EA02A02E14100398444 /* data.framework in Embed Frameworks */,
+				CE062EFE2A03A93300398444 /* data.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,8 +113,8 @@
 		CE0628252A01212000398444 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CE06282F2A01214700398444 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0628342A01214C00398444 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CE0629992A02876900398444 /* domain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = domain.xcodeproj; path = domain/domain.xcodeproj; sourceTree = "<group>"; };
-		CE0629F72A02892000398444 /* data.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = data.xcodeproj; path = data/data.xcodeproj; sourceTree = "<group>"; };
+		CE062EF92A03A91A00398444 /* domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE062EFB2A03A92400398444 /* data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE388B2061A89B978115FA4A /* Pods-TmdbMVVM-UICodeTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-UICodeTests.debug staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-UICodeTests/Pods-TmdbMVVM-UICodeTests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		CE597C5829F6CB4800276B64 /* RemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceImpl.swift; sourceTree = "<group>"; };
 		CE597C5E29F7869C00276B64 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
@@ -201,8 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE062C7C2A02C37300398444 /* domain.framework in Frameworks */,
-				CE062E9F2A02E14100398444 /* data.framework in Frameworks */,
+				CE062EFA2A03A91A00398444 /* domain.framework in Frameworks */,
+				CE062EFD2A03A93300398444 /* data.framework in Frameworks */,
 				5EA175CD3B8B523C40FCE502 /* Pods_TmdbMVVM_UICode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +201,8 @@
 		1E932C7CF9A3F106EBCB0602 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE062EFB2A03A92400398444 /* data.framework */,
+				CE062EF92A03A91A00398444 /* domain.framework */,
 				ED282AD3922792308F832223 /* Pods_TmdbMVVM_UICode.framework */,
 				2DF0177131BB965CD9553522 /* Pods_TmdbMVVM_UICodeTests.framework */,
 				519681087802143FB14C71D1 /* Pods_TmdbMVVM_UICodeUITests.framework */,
@@ -265,22 +239,6 @@
 				0029FFE14BA85554BF86B65C /* Pods-TmdbMVVM-UICodeUITests.release production.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		CE06299A2A02876900398444 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CE06299E2A02876B00398444 /* domain.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CE062E362A02DA4A00398444 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CE062E3A2A02DA4A00398444 /* data.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		CE597C4229F6CA4600276B64 /* framework */ = {
@@ -359,8 +317,6 @@
 		CE84489A29B678F200231703 = {
 			isa = PBXGroup;
 			children = (
-				CE0629F72A02892000398444 /* data.xcodeproj */,
-				CE0629992A02876900398444 /* domain.xcodeproj */,
 				CE8448A529B678F200231703 /* TmdbMVVM-UICode */,
 				CE8448BC29B678FF00231703 /* TmdbMVVM-UICodeTests */,
 				CE8448C729B678FF00231703 /* TmdbMVVM-UICodeUITests */,
@@ -557,8 +513,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CE062D692A02CC5900398444 /* PBXTargetDependency */,
-				CE062E9A2A02DE6D00398444 /* PBXTargetDependency */,
 			);
 			name = "TmdbMVVM-UICode";
 			productName = "TmdbMVVM-UICode";
@@ -637,16 +591,6 @@
 			mainGroup = CE84489A29B678F200231703;
 			productRefGroup = CE8448A429B678F200231703 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CE062E362A02DA4A00398444 /* Products */;
-					ProjectRef = CE0629F72A02892000398444 /* data.xcodeproj */;
-				},
-				{
-					ProductGroup = CE06299A2A02876900398444 /* Products */;
-					ProjectRef = CE0629992A02876900398444 /* domain.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CE8448A229B678F200231703 /* TmdbMVVM-UICode */,
@@ -655,23 +599,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CE06299E2A02876B00398444 /* domain.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = domain.framework;
-			remoteRef = CE06299D2A02876B00398444 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CE062E3A2A02DA4A00398444 /* data.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = data.framework;
-			remoteRef = CE062E392A02DA4A00398444 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE8448A129B678F200231703 /* Resources */ = {
@@ -849,16 +776,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CE062D692A02CC5900398444 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = domain;
-			targetProxy = CE062D682A02CC5900398444 /* PBXContainerItemProxy */;
-		};
-		CE062E9A2A02DE6D00398444 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = data;
-			targetProxy = CE062E992A02DE6D00398444 /* PBXContainerItemProxy */;
-		};
 		CE8448BB29B678FF00231703 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE8448A229B678F200231703 /* TmdbMVVM-UICode */;
