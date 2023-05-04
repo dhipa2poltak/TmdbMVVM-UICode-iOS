@@ -8,7 +8,7 @@
 import Foundation
 import domain
 
-public class DiscoverMovieByGenreResponse: Codable {
+public struct DiscoverMovieByGenreResponse: Codable {
     let page: Int?
     let results: [Movie]?
     let totalPages: Int?
@@ -41,7 +41,7 @@ extension DiscoverMovieByGenreResponse {
                 id: movie.id ?? -1,
                 title: movie.title ?? "",
                 overview: movie.overview ?? "",
-                imageUrl: (!(movie.posterPath?.isEmpty ?? true)) ? ""/*BuildConfiguration.shared.IMAGE_URL_BASE_PATH*/ + (movie.posterPath ?? "") : ""
+                imageUrl: (!(movie.posterPath?.isEmpty ?? true)) ? DataConstants.IMAGE_URL_BASE_PATH + (movie.posterPath ?? "") : ""
             )
         }
 

@@ -10,7 +10,7 @@ import RxSwift
 import app_framework
 import domain
 
-class GenreVM: BaseVM {
+public class GenreVM: BaseVM {
 
     private let getMovieGenreUseCase: GetMovieGenreUseCase?
     private let disposeBag = DisposeBag()
@@ -18,7 +18,7 @@ class GenreVM: BaseVM {
     var genres: [GenreEntity]?
     let genreData: Box<Bool?> = Box(false)
 
-    init(getMovieGenreUseCase: GetMovieGenreUseCase?) {
+    public init(getMovieGenreUseCase: GetMovieGenreUseCase?) {
         self.getMovieGenreUseCase = getMovieGenreUseCase
     }
     

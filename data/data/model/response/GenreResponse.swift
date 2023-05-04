@@ -8,7 +8,7 @@
 import Foundation
 import domain
 
-public class GenreResponse: Codable {
+public struct GenreResponse: Codable {
     let genres: [Genre]?
 
     enum CodingKeys: String, CodingKey {

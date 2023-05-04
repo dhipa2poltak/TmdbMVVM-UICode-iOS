@@ -11,14 +11,14 @@ import SVProgressHUD
 import UIKit
 import app_framework
 
-class MovieDetailVC: BaseVC<MovieDetailVM> {
+public class MovieDetailVC: BaseVC<MovieDetailVM> {
 
     let scrollView = UIScrollView()
     let vw = MovieDetailView()
 
-    weak var coordinator: AppCoordinator?
+    public var navigationService: NavigationProtocol?
 
-    override func loadView() {
+    public override func loadView() {
         super.loadView()
 
         view.backgroundColor = .white
@@ -43,7 +43,7 @@ class MovieDetailVC: BaseVC<MovieDetailVM> {
         ])
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         super.setupNavBar()
 
@@ -57,7 +57,7 @@ class MovieDetailVC: BaseVC<MovieDetailVM> {
         }
     }
 
-    override func setupObserver() {
+    public override func setupObserver() {
         super.setupObserver()
 
         viewModel?.isShowDialogLoading.bind { value in
@@ -86,7 +86,7 @@ class MovieDetailVC: BaseVC<MovieDetailVM> {
             let movieId = viewModel.movieId
             let movieTitle = viewModel.movieDetailsDomain?.title ?? "unknown"
 
-            coordinator?.showMovieReview(movieId: movieId, movieTitle: movieTitle)
+            navigationService?.showMovieReview(movieId: movieId, movieTitle: movieTitle)
         }
     }
 
@@ -94,7 +94,7 @@ class MovieDetailVC: BaseVC<MovieDetailVM> {
         if let viewModel = viewModel {
             let movieId = viewModel.movieId
 
-            coordinator?.showMovieTrailer(movieId: movieId)
+            navigationService?.showMovieTrailer(movieId: movieId)
         }
     }
 }

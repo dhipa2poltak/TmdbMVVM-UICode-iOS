@@ -10,8 +10,13 @@ import UIKit
 import app_framework
 import data
 import domain
+import feature_genre
+import feature_movie_by_genre
+import feature_movie_detail
+import feature_movie_review
+import feature_movie_trailer
 
-class AppCoordinator: Coordinator {
+class AppCoordinator: NavigationProtocol, Coordinator {
     private let container = Container()
 
     var childCoordinators = [Coordinator]()
@@ -112,7 +117,7 @@ class AppCoordinator: Coordinator {
         let vc = GenreVC()
         let viewModel = container.resolve(GenreVM.self)
         vc.viewModel = viewModel
-        vc.coordinator = container.resolve(AppCoordinator.self)
+        vc.navigationService = container.resolve(AppCoordinator.self)
 
         navigationController.pushViewController(vc, animated: false)
     }
@@ -121,7 +126,7 @@ class AppCoordinator: Coordinator {
         let vc = MovieByGenreVC()
         let viewModel = container.resolve(MovieByGenreVM.self, arguments: genreId, genreName)
         vc.viewModel = viewModel
-        vc.coordinator = container.resolve(AppCoordinator.self)
+        vc.navigationService = container.resolve(AppCoordinator.self)
 
         navigationController.pushViewController(vc, animated: true)
     }
@@ -130,7 +135,7 @@ class AppCoordinator: Coordinator {
         let vc = MovieDetailVC()
         let viewModel = container.resolve(MovieDetailVM.self, argument: movieId)
         vc.viewModel = viewModel
-        vc.coordinator = container.resolve(AppCoordinator.self)
+        vc.navigationService = container.resolve(AppCoordinator.self)
 
         navigationController.pushViewController(vc, animated: true)
     }

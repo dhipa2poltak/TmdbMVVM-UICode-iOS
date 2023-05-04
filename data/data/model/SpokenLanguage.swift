@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SpokenLanguage: Codable {
+struct SpokenLanguage: Codable {
     let iso6391: String?
     let name: String?
     let englishName: String?

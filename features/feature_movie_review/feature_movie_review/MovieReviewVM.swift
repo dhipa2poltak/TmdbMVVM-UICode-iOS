@@ -1,5 +1,5 @@
 //
-//  MovieByGenreVM.swift
+//  MovieReviewVM.swift
 //  TmdbMVVM-UICode
 //
 //  Created by user on 07/03/23.
@@ -10,40 +10,40 @@ import RxSwift
 import app_framework
 import domain
 
-class MovieByGenreVM: BaseVM {
+public class MovieReviewVM: BaseVM {
 
-    private let getMovieByGenreUseCase: GetMovieByGenreUseCase?
+    private let getMovieReviewUseCase: GetMovieReviewUseCase?
     private let disposeBag = DisposeBag()
 
-    var movies: [MovieEntity] = []
-    let movieData: Box<Bool?> = Box(false)
+    var reviews: [ReviewEntity] = []
+    let reviewData: Box<Bool?> = Box(false)
 
-    var genreId = -1
-    var genreName = ""
+    public var movieId = -1
+    public var movieTitle = ""
     var page = 1
 
-    init(getMovieByGenreUseCase: GetMovieByGenreUseCase?) {
-        self.getMovieByGenreUseCase = getMovieByGenreUseCase
+    public init(getMovieReviewUseCase: GetMovieReviewUseCase?) {
+        self.getMovieReviewUseCase = getMovieReviewUseCase
     }
 
-    func fetchMovieGenre(genreId: String, page: Int) {
-        guard getMovieByGenreUseCase != nil else {
+    func fetchMovieReviews(movieId: Int, page: Int) {
+        guard getMovieReviewUseCase != nil else {
             self.errorMessage.value = "error dependency"
             return
         }
 
         isShowDialogLoading.value = true
 
-        getMovieByGenreUseCase?.call(genreId: genreId, page: page)
+        getMovieReviewUseCase?.call(movieId: movieId, page: page)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false
 
-                let movies = response.results
-                if movies.count > 0 {
-                    for movie in movies {
-                        self?.movies.append(movie)
-                        self?.movieData.value = true
+                let reviews = response.results
+                if reviews.count > 0 {
+                    for review in reviews {
+                        self?.reviews.append(review)
+                        self?.reviewData.value = true
                     }
 
                     self?.page = page

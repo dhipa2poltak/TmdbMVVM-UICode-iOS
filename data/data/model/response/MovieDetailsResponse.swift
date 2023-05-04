@@ -8,7 +8,7 @@
 import Foundation
 import domain
 
-public class MovieDetailsResponse: Codable {
+public struct MovieDetailsResponse: Codable {
     let adult: Bool?
     let backdropPath: String?
     //let belongs_to_collection: Any?
@@ -124,7 +124,7 @@ extension MovieDetailsResponse {
             id: self.id ?? -1,
             overview: self.overview ?? "",
             title: self.title ?? "",
-            imageUrl: (!(posterPath?.isEmpty ?? true)) ? ""/*BuildConfiguration.shared.IMAGE_URL_BASE_PATH*/ + (posterPath ?? "") : ""
+            imageUrl: (!(posterPath?.isEmpty ?? true)) ? DataConstants.IMAGE_URL_BASE_PATH + (posterPath ?? "") : ""
         )
     }
 }

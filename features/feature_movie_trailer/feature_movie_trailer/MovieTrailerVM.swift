@@ -10,15 +10,15 @@ import RxSwift
 import app_framework
 import domain
 
-class MovieTrailerVM: BaseVM {
+public class MovieTrailerVM: BaseVM {
 
     private let getMovieTrailerUseCase: GetMovieTrailerUseCase?
     private let disposeBag = DisposeBag()
 
-    var movieId = -1
+    public var movieId = -1
     let movieKey = Box("")
 
-    init(getMovieTrailerUseCase: GetMovieTrailerUseCase?) {
+    public init(getMovieTrailerUseCase: GetMovieTrailerUseCase?) {
         self.getMovieTrailerUseCase = getMovieTrailerUseCase
     }
 

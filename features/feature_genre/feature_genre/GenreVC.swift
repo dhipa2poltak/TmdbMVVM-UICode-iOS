@@ -9,11 +9,11 @@ import SVProgressHUD
 import UIKit
 import app_framework
 
-class GenreVC: BaseVC<GenreVM> {
+public class GenreVC: BaseVC<GenreVM> {
 
     private let vw = GenreView()
 
-    weak var coordinator: AppCoordinator?
+    public var navigationService: NavigationProtocol?
 
     private let cellId = "GenreContentTVC"
 
@@ -23,13 +23,13 @@ class GenreVC: BaseVC<GenreVM> {
         return rc
     }()
 
-    override func loadView() {
+    public override func loadView() {
         super.loadView()
 
         view = vw
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         super.setupNavBar()
         // Do any additional setup after loading the view.
@@ -56,7 +56,7 @@ class GenreVC: BaseVC<GenreVM> {
         vw.tableVw.register(GenreContentTVC.self, forCellReuseIdentifier: cellId)
     }
 
-    override func setupObserver() {
+    public override func setupObserver() {
         super.setupObserver()
 
         viewModel?.isShowDialogLoading.bind { value in
@@ -82,11 +82,11 @@ class GenreVC: BaseVC<GenreVM> {
 }
 
 extension GenreVC: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.genres?.count ?? 0
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GenreContentTVC
         cell.selectionStyle = .none
 
@@ -97,8 +97,8 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let genre = viewModel?.genres?[indexPath.row]
-        coordinator?.showMovieByGenre(genreId: genre?.id ?? -1, genreName: genre?.name ?? "unknown")
+        navigationService?.showMovieByGenre(genreId: genre?.id ?? -1, genreName: genre?.name ?? "unknown")
     }
 }

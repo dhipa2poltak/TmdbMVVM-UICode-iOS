@@ -1,5 +1,5 @@
 //
-//  MovieReviewVM.swift
+//  MovieByGenreVM.swift
 //  TmdbMVVM-UICode
 //
 //  Created by user on 07/03/23.
@@ -10,40 +10,40 @@ import RxSwift
 import app_framework
 import domain
 
-class MovieReviewVM: BaseVM {
+public class MovieByGenreVM: BaseVM {
 
-    private let getMovieReviewUseCase: GetMovieReviewUseCase?
+    private let getMovieByGenreUseCase: GetMovieByGenreUseCase?
     private let disposeBag = DisposeBag()
 
-    var reviews: [ReviewEntity] = []
-    let reviewData: Box<Bool?> = Box(false)
+    var movies: [MovieEntity] = []
+    let movieData: Box<Bool?> = Box(false)
 
-    var movieId = -1
-    var movieTitle = ""
+    public var genreId = -1
+    public var genreName = ""
     var page = 1
 
-    init(getMovieReviewUseCase: GetMovieReviewUseCase?) {
-        self.getMovieReviewUseCase = getMovieReviewUseCase
+    public init(getMovieByGenreUseCase: GetMovieByGenreUseCase?) {
+        self.getMovieByGenreUseCase = getMovieByGenreUseCase
     }
 
-    func fetchMovieReviews(movieId: Int, page: Int) {
-        guard getMovieReviewUseCase != nil else {
+    func fetchMovieGenre(genreId: String, page: Int) {
+        guard getMovieByGenreUseCase != nil else {
             self.errorMessage.value = "error dependency"
             return
         }
 
         isShowDialogLoading.value = true
 
-        getMovieReviewUseCase?.call(movieId: movieId, page: page)
+        getMovieByGenreUseCase?.call(genreId: genreId, page: page)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false
 
-                let reviews = response.results
-                if reviews.count > 0 {
-                    for review in reviews {
-                        self?.reviews.append(review)
-                        self?.reviewData.value = true
+                let movies = response.results
+                if movies.count > 0 {
+                    for movie in movies {
+                        self?.movies.append(movie)
+                        self?.movieData.value = true
                     }
 
                     self?.page = page

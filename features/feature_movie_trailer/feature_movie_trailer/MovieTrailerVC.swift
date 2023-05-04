@@ -11,18 +11,18 @@ import UIKit
 import YouTubePlayer
 import app_framework
 
-class MovieTrailerVC: BaseVC<MovieTrailerVM>, YouTubePlayerDelegate {
+public class MovieTrailerVC: BaseVC<MovieTrailerVM>, YouTubePlayerDelegate {
 
     let vw = MovieTrailerView()
 
-    override func loadView() {
+    public override func loadView() {
         super.loadView()
 
         view = vw
         view.backgroundColor = .white
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         super.setupNavBar()
 
@@ -34,7 +34,7 @@ class MovieTrailerVC: BaseVC<MovieTrailerVM>, YouTubePlayerDelegate {
         }
     }
 
-    override func setupObserver() {
+    public override func setupObserver() {
         super.setupObserver()
 
         viewModel?.isShowDialogLoading.bind { value in
@@ -53,7 +53,7 @@ class MovieTrailerVC: BaseVC<MovieTrailerVM>, YouTubePlayerDelegate {
         }
     }
 
-    func playerReady(_ videoPlayer: YouTubePlayerView) {
+    public func playerReady(_ videoPlayer: YouTubePlayerView) {
         vw.youtubePlayer.play()
     }
 }

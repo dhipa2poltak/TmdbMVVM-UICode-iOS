@@ -10,19 +10,19 @@ import SVProgressHUD
 import UIKit
 import app_framework
 
-class MovieReviewVC: BaseVC<MovieReviewVM> {
+public class MovieReviewVC: BaseVC<MovieReviewVM> {
 
     let vw = MovieReviewView()
 
     private let cellId = "ReviewTVC"
 
-    override func loadView() {
+    public override func loadView() {
         super.loadView()
 
         view = vw
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         super.setupNavBar()
 
@@ -42,7 +42,7 @@ class MovieReviewVC: BaseVC<MovieReviewVM> {
         }
     }
 
-    override func setupObserver() {
+    public override func setupObserver() {
         super.setupObserver()
 
         viewModel?.isShowDialogLoading.bind { [weak self] value in
@@ -65,7 +65,7 @@ class MovieReviewVC: BaseVC<MovieReviewVM> {
         }
     }
 
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
                                    withVelocity _: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
     {
         let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
@@ -77,11 +77,11 @@ class MovieReviewVC: BaseVC<MovieReviewVM> {
 }
 
 extension MovieReviewVC: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.reviews.count ?? 0
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ReviewTVC
 
         if let review = viewModel?.reviews[indexPath.row] {
@@ -91,7 +91,7 @@ extension MovieReviewVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
 }

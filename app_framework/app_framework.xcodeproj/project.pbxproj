@@ -30,6 +30,7 @@
 		CE0630B82A03B85C00398444 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0630A62A03B85B00398444 /* UIColor+Ext.swift */; };
 		CE0630B92A03B85C00398444 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0630A72A03B85B00398444 /* UIViewController+Ext.swift */; };
 		CE0630BA2A03B85C00398444 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0630A82A03B85B00398444 /* UIView+Ext.swift */; };
+		CE0631D22A03DC5A00398444 /* NavigationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0631D12A03DC5A00398444 /* NavigationProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +77,7 @@
 		CE0630A62A03B85B00398444 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		CE0630A72A03B85B00398444 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CE0630A82A03B85B00398444 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		CE0631D12A03DC5A00398444 /* NavigationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationProtocol.swift; sourceTree = "<group>"; };
 		D228A86185AFB281AEEDD07B /* Pods-app_framework.release verify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_framework.release verify.xcconfig"; path = "Target Support Files/Pods-app_framework/Pods-app_framework.release verify.xcconfig"; sourceTree = "<group>"; };
 		D3E23122869A8F2931E62D49 /* Pods-app_framework.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_framework.debug production.xcconfig"; path = "Target Support Files/Pods-app_framework/Pods-app_framework.debug production.xcconfig"; sourceTree = "<group>"; };
 		E3020D7B334412072CD3CE9B /* Pods-app_framework.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_framework.release staging.xcconfig"; path = "Target Support Files/Pods-app_framework/Pods-app_framework.release staging.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				CE06308A2A03B85A00398444 /* Configs */,
 				CE06308C2A03B85A00398444 /* data */,
 				CE0630A52A03B85B00398444 /* Extension */,
+				CE0631CE2A03DB8B00398444 /* navigation */,
 				CE06309B2A03B85B00398444 /* UIComponent */,
 				CE0630622A03B7A000398444 /* app_framework.h */,
 				CE0630632A03B7A000398444 /* Info.plist */,
@@ -270,6 +273,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CE0631CE2A03DB8B00398444 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CE0631D12A03DC5A00398444 /* NavigationProtocol.swift */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -386,6 +397,7 @@
 				CE0630B42A03B85C00398444 /* GenreContentTVC.swift in Sources */,
 				CE0630B22A03B85C00398444 /* MovieView.swift in Sources */,
 				CE0630AA2A03B85C00398444 /* RemoteDataSourceImpl.swift in Sources */,
+				CE0631D22A03DC5A00398444 /* NavigationProtocol.swift in Sources */,
 				CE0630B02A03B85C00398444 /* BaseVM.swift in Sources */,
 				CE0630B72A03B85C00398444 /* ReviewView.swift in Sources */,
 				CE0630B52A03B85C00398444 /* GenreContentView.swift in Sources */,

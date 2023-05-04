@@ -8,7 +8,7 @@
 import Foundation
 import domain
 
-public class TrailerResponse: Codable {
+public struct TrailerResponse: Codable {
     let id: Int?
     let results: [Trailer]?
 

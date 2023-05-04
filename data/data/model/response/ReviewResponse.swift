@@ -8,7 +8,7 @@
 import Foundation
 import domain
 
-public class ReviewResponse: Codable {
+public struct ReviewResponse: Codable {
     let id: Int?
     let page: Int?
     let results: [Review]?

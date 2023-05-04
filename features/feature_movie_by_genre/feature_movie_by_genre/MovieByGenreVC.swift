@@ -10,20 +10,20 @@ import SVProgressHUD
 import UIKit
 import app_framework
 
-class MovieByGenreVC: BaseVC<MovieByGenreVM> {
+public class MovieByGenreVC: BaseVC<MovieByGenreVM> {
 
     let vw = MovieByGenreView()
 
-    weak var coordinator: AppCoordinator?
+    public var navigationService: NavigationProtocol?
 
     private let cellId = "MovieTVC"
 
-    override func loadView() {
+    public override func loadView() {
         super.loadView()
         view = vw
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         super.setupNavBar()
 
@@ -45,7 +45,7 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM> {
         }
     }
 
-    override func setupObserver() {
+    public override func setupObserver() {
         super.setupObserver()
 
         viewModel?.isShowDialogLoading.bind { [weak self] value in
@@ -64,7 +64,7 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM> {
         }
     }
 
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
                                    withVelocity _: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
     {
         let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
@@ -76,11 +76,11 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM> {
 }
 
 extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.movies.count ?? 0
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTVC
         cell.selectionStyle = .none
 
@@ -90,8 +90,8 @@ extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = viewModel?.movies[indexPath.row]
-        coordinator?.showMovieDetail(movieId: movie?.id ?? -1)
+        navigationService?.showMovieDetail(movieId: movie?.id ?? -1)
     }
 }

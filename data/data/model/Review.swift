@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Review: Codable {
+struct Review: Codable {
     let author: String?
     let authorDetails: AuthorDetails?
     let content: String?
