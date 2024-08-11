@@ -11,9 +11,6 @@
 		08FE6469D972F40ACDCED5A4 /* Pods_TmdbMVVM_UICodeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 519681087802143FB14C71D1 /* Pods_TmdbMVVM_UICodeUITests.framework */; };
 		5EA175CD3B8B523C40FCE502 /* Pods_TmdbMVVM_UICode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED282AD3922792308F832223 /* Pods_TmdbMVVM_UICode.framework */; };
 		CE06282E2A01214700398444 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0628302A01214700398444 /* Localizable.strings */; };
-		CE062EFA2A03A91A00398444 /* domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE062EF92A03A91A00398444 /* domain.framework */; };
-		CE062EFD2A03A93300398444 /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE062EFB2A03A92400398444 /* data.framework */; };
-		CE0630392A03B6D400398444 /* app_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0630382A03B6D400398444 /* app_framework.framework */; };
 		CE0631952A03D90E00398444 /* feature_genre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0631942A03D90E00398444 /* feature_genre.framework */; };
 		CE0631962A03D90E00398444 /* feature_genre.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE0631942A03D90E00398444 /* feature_genre.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE0631D62A03DEE500398444 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0631D52A03DEE500398444 /* Coordinator.swift */; };
@@ -25,6 +22,12 @@
 		CE06325C2A03EC8500398444 /* feature_movie_review.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE06325A2A03EC8500398444 /* feature_movie_review.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE0632922A03EFB800398444 /* feature_movie_trailer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0632912A03EFB800398444 /* feature_movie_trailer.framework */; };
 		CE0632932A03EFB800398444 /* feature_movie_trailer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE0632912A03EFB800398444 /* feature_movie_trailer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE0C590A2C68A75C00620BFE /* domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE062EF92A03A91A00398444 /* domain.framework */; };
+		CE0C590B2C68A75C00620BFE /* domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE062EF92A03A91A00398444 /* domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE0C590C2C68A75F00620BFE /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE062EFB2A03A92400398444 /* data.framework */; };
+		CE0C590D2C68A75F00620BFE /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE062EFB2A03A92400398444 /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE0C590E2C68A76200620BFE /* app_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0630382A03B6D400398444 /* app_framework.framework */; };
+		CE0C590F2C68A76200620BFE /* app_framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE0630382A03B6D400398444 /* app_framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE8448A729B678F200231703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8448A629B678F200231703 /* AppDelegate.swift */; };
 		CE8448B029B678FF00231703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8448AF29B678FF00231703 /* Assets.xcassets */; };
 		CE8448B329B678FF00231703 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8448B129B678FF00231703 /* LaunchScreen.storyboard */; };
@@ -58,9 +61,12 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CE0631F12A03E2D600398444 /* feature_movie_by_genre.framework in Embed Frameworks */,
+				CE0C590F2C68A76200620BFE /* app_framework.framework in Embed Frameworks */,
 				CE0632932A03EFB800398444 /* feature_movie_trailer.framework in Embed Frameworks */,
 				CE0631962A03D90E00398444 /* feature_genre.framework in Embed Frameworks */,
+				CE0C590D2C68A75F00620BFE /* data.framework in Embed Frameworks */,
 				CE06325C2A03EC8500398444 /* feature_movie_review.framework in Embed Frameworks */,
+				CE0C590B2C68A75C00620BFE /* domain.framework in Embed Frameworks */,
 				CE06322D2A03E8AA00398444 /* feature_movie_detail.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -129,13 +135,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0631952A03D90E00398444 /* feature_genre.framework in Frameworks */,
-				CE062EFA2A03A91A00398444 /* domain.framework in Frameworks */,
 				CE0632922A03EFB800398444 /* feature_movie_trailer.framework in Frameworks */,
 				CE06322C2A03E8AA00398444 /* feature_movie_detail.framework in Frameworks */,
-				CE0630392A03B6D400398444 /* app_framework.framework in Frameworks */,
-				CE062EFD2A03A93300398444 /* data.framework in Frameworks */,
+				CE0C590E2C68A76200620BFE /* app_framework.framework in Frameworks */,
 				CE0631F02A03E2D600398444 /* feature_movie_by_genre.framework in Frameworks */,
 				CE06325B2A03EC8500398444 /* feature_movie_review.framework in Frameworks */,
+				CE0C590A2C68A75C00620BFE /* domain.framework in Frameworks */,
+				CE0C590C2C68A75F00620BFE /* data.framework in Frameworks */,
 				5EA175CD3B8B523C40FCE502 /* Pods_TmdbMVVM_UICode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
