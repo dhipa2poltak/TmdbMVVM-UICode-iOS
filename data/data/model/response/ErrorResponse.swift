@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct ErrorResponse: Codable {
-    let success: Bool?
-    let statusCode: Int?
-    let statusMessage: String?
+public struct ErrorResponse: Codable {
+    public let success: Bool?
+    public let statusCode: Int?
+    public let statusMessage: String?
 
     enum CodingKeys: String, CodingKey {
         case success

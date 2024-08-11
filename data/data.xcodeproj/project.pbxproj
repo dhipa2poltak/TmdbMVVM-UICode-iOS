@@ -27,6 +27,7 @@
 		CE062EBC2A02E5C800398444 /* domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE062A342A028A4E00398444 /* domain.framework */; };
 		CE062EBD2A02E5C800398444 /* domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE062A342A028A4E00398444 /* domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE0633872A03FE1900398444 /* DataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0633862A03FE1800398444 /* DataConstants.swift */; };
+		CE0C59542C68BE2700620BFE /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C59532C68BE2700620BFE /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,6 +75,7 @@
 		CE062A292A0289BB00398444 /* AppRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRepositoryImpl.swift; sourceTree = "<group>"; };
 		CE062A342A028A4E00398444 /* domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0633862A03FE1800398444 /* DataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConstants.swift; sourceTree = "<group>"; };
+		CE0C59532C68BE2700620BFE /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		F98D69DDE09BB820A6367A00 /* Pods-TmdbMVVM-UICode-data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-UICode-data.debug.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-UICode-data/Pods-TmdbMVVM-UICode-data.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 				CE062A102A02898E00398444 /* GenreResponse.swift */,
 				CE062A112A02898E00398444 /* MovieDetailsResponse.swift */,
 				CE062A122A02898E00398444 /* ReviewResponse.swift */,
+				CE0C59532C68BE2700620BFE /* ErrorResponse.swift */,
 			);
 			path = response;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				CE062A202A02898E00398444 /* Genre.swift in Sources */,
 				CE0633872A03FE1900398444 /* DataConstants.swift in Sources */,
 				CE062A1E2A02898E00398444 /* MovieDetailsResponse.swift in Sources */,
+				CE0C59542C68BE2700620BFE /* ErrorResponse.swift in Sources */,
 				CE062A192A02898E00398444 /* Review.swift in Sources */,
 				CE062A182A02898E00398444 /* Trailer.swift in Sources */,
 				CE062A1F2A02898E00398444 /* ReviewResponse.swift in Sources */,

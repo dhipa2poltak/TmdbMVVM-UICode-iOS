@@ -16,7 +16,6 @@
 		CE0630AA2A03B85C00398444 /* RemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06308E2A03B85A00398444 /* RemoteDataSourceImpl.swift */; };
 		CE0630AB2A03B85C00398444 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0630922A03B85A00398444 /* ApiClient.swift */; };
 		CE0630AC2A03B85C00398444 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0630932A03B85A00398444 /* Router.swift */; };
-		CE0630AD2A03B85C00398444 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0630942A03B85A00398444 /* ErrorResponse.swift */; };
 		CE0630AE2A03B85C00398444 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0630962A03B85A00398444 /* BaseVC.swift */; };
 		CE0630AF2A03B85C00398444 /* ProgrammaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0630972A03B85A00398444 /* ProgrammaticView.swift */; };
 		CE0630B02A03B85C00398444 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0630982A03B85B00398444 /* BaseVM.swift */; };
@@ -63,7 +62,6 @@
 		CE06308E2A03B85A00398444 /* RemoteDataSourceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceImpl.swift; sourceTree = "<group>"; };
 		CE0630922A03B85A00398444 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		CE0630932A03B85A00398444 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		CE0630942A03B85A00398444 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CE0630962A03B85A00398444 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		CE0630972A03B85A00398444 /* ProgrammaticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammaticView.swift; sourceTree = "<group>"; };
 		CE0630982A03B85B00398444 /* BaseVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 		CE06308C2A03B85A00398444 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				CE06308F2A03B85A00398444 /* core */,
 				CE06308D2A03B85A00398444 /* datasource */,
 			);
 			path = data;
@@ -177,35 +174,10 @@
 		CE06308D2A03B85A00398444 /* datasource */ = {
 			isa = PBXGroup;
 			children = (
+				CE0C594F2C68BD8300620BFE /* remote */,
 				CE06308E2A03B85A00398444 /* RemoteDataSourceImpl.swift */,
 			);
 			path = datasource;
-			sourceTree = "<group>";
-		};
-		CE06308F2A03B85A00398444 /* core */ = {
-			isa = PBXGroup;
-			children = (
-				CE0630902A03B85A00398444 /* api */,
-			);
-			path = core;
-			sourceTree = "<group>";
-		};
-		CE0630902A03B85A00398444 /* api */ = {
-			isa = PBXGroup;
-			children = (
-				CE0630912A03B85A00398444 /* rest */,
-			);
-			path = api;
-			sourceTree = "<group>";
-		};
-		CE0630912A03B85A00398444 /* rest */ = {
-			isa = PBXGroup;
-			children = (
-				CE0630922A03B85A00398444 /* ApiClient.swift */,
-				CE0630942A03B85A00398444 /* ErrorResponse.swift */,
-				CE0630932A03B85A00398444 /* Router.swift */,
-			);
-			path = rest;
 			sourceTree = "<group>";
 		};
 		CE0630952A03B85A00398444 /* BaseClass */ = {
@@ -279,6 +251,23 @@
 				CE0631D12A03DC5A00398444 /* NavigationProtocol.swift */,
 			);
 			path = navigation;
+			sourceTree = "<group>";
+		};
+		CE0C594F2C68BD8300620BFE /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				CE0C59502C68BD8B00620BFE /* rest */,
+			);
+			path = remote;
+			sourceTree = "<group>";
+		};
+		CE0C59502C68BD8B00620BFE /* rest */ = {
+			isa = PBXGroup;
+			children = (
+				CE0630932A03B85A00398444 /* Router.swift */,
+				CE0630922A03B85A00398444 /* ApiClient.swift */,
+			);
+			path = rest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0630B12A03B85C00398444 /* Box.swift in Sources */,
-				CE0630AD2A03B85C00398444 /* ErrorResponse.swift in Sources */,
 				CE0630B92A03B85C00398444 /* UIViewController+Ext.swift in Sources */,
 				CE0630AF2A03B85C00398444 /* ProgrammaticView.swift in Sources */,
 				CE0630B62A03B85C00398444 /* ReviewTVC.swift in Sources */,
