@@ -15,12 +15,10 @@ class MovieTrailerView: ProgrammaticView {
     let youtubePlayer = YouTubePlayerView()
 
     override func configure() {
-
+        addConstrainedSubViews(youtubePlayer)
     }
 
     override func constrain() {
-        addConstrainedSubViews(youtubePlayer)
-
         NSLayoutConstraint.activate([
             youtubePlayer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             youtubePlayer.leadingAnchor.constraint(equalTo: leadingAnchor),

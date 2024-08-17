@@ -11,25 +11,43 @@ import app_framework
 
 class MovieDetailView: ProgrammaticView {
 
-    let lblTitleMovie = UILabel()
+    let lblTitleMovie: UILabel = {
+        let vw = UILabel()
+        vw.font = .systemFont(ofSize: 20, weight: .bold)
+
+        return vw
+    }()
+
     let ivMovie = UIImageView()
-    let lblDesc = UILabel()
-    let btnShowReview = UIButton()
-    let btnShowTrailer = UIButton()
+
+    let lblDesc: UILabel = {
+        let vw = UILabel()
+        vw.numberOfLines = 0
+
+        return vw
+    }()
+
+    let btnShowReview: UIButton = {
+        let vw = UIButton()
+        vw.setTitle(NSLocalizedString("key_show_review", comment: ""), for: .normal)
+        vw.setTitleColor(.systemBlue, for: .normal)
+
+        return vw
+    }()
+
+    let btnShowTrailer: UIButton = {
+        let vw = UIButton()
+        vw.setTitle(NSLocalizedString("key_show_trailer", comment: ""), for: .normal)
+        vw.setTitleColor(.systemBlue, for: .normal)
+
+        return vw
+    }()
 
     override func configure() {
-        lblTitleMovie.font = .systemFont(ofSize: 20, weight: .bold)
-        lblDesc.numberOfLines = 0
-
-        btnShowReview.setTitle(NSLocalizedString("key_show_review", comment: ""), for: .normal)
-        btnShowReview.setTitleColor(.systemBlue, for: .normal)
-        btnShowTrailer.setTitle(NSLocalizedString("key_show_trailer", comment: ""), for: .normal)
-        btnShowTrailer.setTitleColor(.systemBlue, for: .normal)
+        addConstrainedSubViews(lblTitleMovie, ivMovie, lblDesc, btnShowReview, btnShowTrailer)
     }
 
     override func constrain() {
-        addConstrainedSubViews(lblTitleMovie, ivMovie, lblDesc, btnShowReview, btnShowTrailer)
-
         NSLayoutConstraint.activate([
             lblTitleMovie.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             lblTitleMovie.centerXAnchor.constraint(equalTo: centerXAnchor),

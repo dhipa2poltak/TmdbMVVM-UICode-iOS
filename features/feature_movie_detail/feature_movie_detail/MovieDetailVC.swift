@@ -13,8 +13,20 @@ import app_framework
 
 public class MovieDetailVC: BaseVC<MovieDetailVM> {
 
-    let scrollView = UIScrollView()
-    let vw = MovieDetailView()
+    let scrollView: UIScrollView = {
+        let vw = UIScrollView()
+        vw.translatesAutoresizingMaskIntoConstraints = false
+
+        return vw
+    }()
+
+
+    let vw: MovieDetailView = {
+        let vw = MovieDetailView()
+        vw.translatesAutoresizingMaskIntoConstraints = false
+
+        return vw
+    }()
 
     public var navigationService: NavigationProtocol?
 
@@ -22,12 +34,8 @@ public class MovieDetailVC: BaseVC<MovieDetailVM> {
         super.loadView()
 
         view.backgroundColor = .white
-        
         view.addSubview(scrollView)
         scrollView.addSubview(vw)
-
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        vw.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -81,7 +89,8 @@ public class MovieDetailVC: BaseVC<MovieDetailVM> {
         }
     }
 
-    @IBAction func onClickShowReview(_ sender: UIButton) {
+    @objc
+    func onClickShowReview(_ sender: UIButton) {
         if let viewModel = viewModel {
             let movieId = viewModel.movieId
             let movieTitle = viewModel.movieDetailsDomain?.title ?? "unknown"
@@ -90,7 +99,8 @@ public class MovieDetailVC: BaseVC<MovieDetailVM> {
         }
     }
 
-    @IBAction func onClickShowTrailer(_ sender: UIButton) {
+    @objc
+    func onClickShowTrailer(_ sender: UIButton) {
         if let viewModel = viewModel {
             let movieId = viewModel.movieId
 

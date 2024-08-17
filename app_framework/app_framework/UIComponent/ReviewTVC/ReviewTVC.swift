@@ -12,7 +12,14 @@ import domain
 
 public class ReviewTVC: UITableViewCell {
 
-    public let vw = ReviewView()
+    public let vw: ReviewView = {
+        let vw = ReviewView()
+        vw.layer.borderWidth = 1
+        vw.layer.borderColor = UIColor.lightGray.cgColor
+        vw.translatesAutoresizingMaskIntoConstraints = false
+
+        return vw
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,14 +32,12 @@ public class ReviewTVC: UITableViewCell {
 
     private func initView() {
         selectionStyle = .none
-        
         contentView.addSubview(vw)
-        vw.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
-            vw.topAnchor.constraint(equalTo: contentView.topAnchor),
-            vw.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            vw.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            vw.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            vw.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            vw.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             vw.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }

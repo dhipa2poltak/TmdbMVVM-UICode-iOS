@@ -10,20 +10,33 @@ import UIKit
 
 public class MovieView: ProgrammaticView {
     
-    public let ivMovie = UIImageView()
-    public let lblTitle = UILabel()
-    public let lblOverview = UILabel()
+    public let ivMovie: UIImageView = {
+        let vw = UIImageView()
+        vw.contentMode = .scaleAspectFit
+
+        return vw
+    }()
+
+    public let lblTitle: UILabel = {
+        let vw = UILabel()
+        vw.font = UIFont.boldSystemFont(ofSize: 17)
+        vw.numberOfLines = 0
+
+        return vw
+    }()
+
+    public let lblOverview: UILabel = {
+        let vw = UILabel()
+        vw.numberOfLines = 0
+
+        return vw
+    }()
 
     public override func configure() {
-        ivMovie.contentMode = .scaleAspectFit
-        lblTitle.font = UIFont.boldSystemFont(ofSize: 17)
-        lblTitle.numberOfLines = 0
-        lblOverview.numberOfLines = 0
+        addConstrainedSubViews(ivMovie, lblTitle, lblOverview)
     }
 
     public override func constrain() {
-        addConstrainedSubViews(ivMovie, lblTitle, lblOverview)
-
         NSLayoutConstraint.activate([
             ivMovie.widthAnchor.constraint(equalToConstant: 100),
             ivMovie.heightAnchor.constraint(equalToConstant: 100),

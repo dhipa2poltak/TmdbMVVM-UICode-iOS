@@ -11,21 +11,27 @@ import app_framework
 
 class MovieByGenreView: ProgrammaticView {
 
-    let lblTitle = UILabel()
-    let tableVw = UITableView()
+    let lblTitle: UILabel = {
+        let vw = UILabel()
+        vw.font = .systemFont(ofSize: 20.0, weight: .bold)
+
+        return vw
+    }()
+
+    let tableVw: UITableView = {
+        let vw = UITableView()
+        vw.backgroundColor = .clear
+        vw.separatorStyle = .none
+
+        return vw
+    }()
 
     override func configure() {
         backgroundColor = .white
-
-        lblTitle.font = .systemFont(ofSize: 20.0, weight: .bold)
-
-        tableVw.backgroundColor = .clear
-        tableVw.separatorStyle = .none
+        addConstrainedSubViews(lblTitle, tableVw)
     }
 
     override func constrain() {
-        addConstrainedSubViews(lblTitle, tableVw)
-
         NSLayoutConstraint.activate([
             lblTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             lblTitle.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),

@@ -13,12 +13,10 @@ public class GenreContentView: ProgrammaticView {
     public let lblGenre = UILabel()
 
     public override func configure() {
-
+        addConstrainedSubViews(lblGenre)
     }
 
     public override func constrain() {
-        addConstrainedSubViews(lblGenre)
-
         NSLayoutConstraint.activate([
             lblGenre.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             lblGenre.topAnchor.constraint(equalTo: topAnchor, constant: 16),

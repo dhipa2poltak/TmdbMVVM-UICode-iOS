@@ -10,18 +10,27 @@ import UIKit
 
 public class ReviewView: ProgrammaticView {
 
-    public let lblContent = UILabel()
+    public let lblContent: UILabel = {
+        let vw = UILabel()
+        vw.numberOfLines = 0
+
+        return vw
+    }()
+
     public let ivAuthor = UIImageView()
-    public let lblAuthor = UILabel()
+
+    public let lblAuthor: UILabel = {
+        let vw = UILabel()
+        vw.textAlignment = .right
+
+        return vw
+    }()
 
     public override func configure() {
-        lblContent.numberOfLines = 0
-        lblAuthor.textAlignment = .right
+        addConstrainedSubViews(lblContent, ivAuthor, lblAuthor)
     }
 
     public override func constrain() {
-        addConstrainedSubViews(lblContent, ivAuthor, lblAuthor)
-
         NSLayoutConstraint.activate([
             lblContent.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             lblContent.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
