@@ -689,7 +689,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.staging.debug";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode..staging.debug";
 				PRODUCT_NAME = "TmdbMVVM-UICode (Staging-Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -709,7 +709,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.staging";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode..staging";
 				PRODUCT_NAME = "TmdbMVVM-UICode (Staging)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1005,7 +1005,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.verify.debug";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode..verify.debug";
 				PRODUCT_NAME = "TmdbMVVM-UICode (Verify-Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1125,7 +1125,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.verify";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-UICode..verify";
 				PRODUCT_NAME = "TmdbMVVM-UICode (Verify)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
