@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AuthorDetailsEntity {
+public struct AuthorDetails {
     public let avatarPath: String
 
     public init(avatarPath: String = "") {

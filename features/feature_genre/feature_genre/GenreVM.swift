@@ -15,7 +15,7 @@ public class GenreVM: BaseVM {
     private let getMovieGenreUseCase: GetMovieGenreUseCase?
     private let disposeBag = DisposeBag()
 
-    var genres: [GenreEntity]?
+    var genres: [Genre]?
     let genreData: Box<Bool?> = Box(false)
 
     public init(getMovieGenreUseCase: GetMovieGenreUseCase?) {

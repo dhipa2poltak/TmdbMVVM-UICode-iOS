@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct GenreDomain {
-    public let genres: [GenreEntity]
+public struct GenreModel {
+    public let genres: [Genre]
 
-    public init(genres: [GenreEntity] = []) {
+    public init(genres: [Genre] = []) {
         self.genres = genres
     }
 }

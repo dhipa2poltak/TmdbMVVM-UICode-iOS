@@ -17,37 +17,37 @@ public class AppRepositoryImpl: AppRepository {
         self.appDataSource = appDataSource
     }
 
-    public func fetchMovieGenre() -> Observable<GenreDomain> {
+    public func fetchMovieGenre() -> Observable<GenreModel> {
         return appDataSource.fetchMovieGenre()
-            .map { (response) -> GenreDomain in
+            .map { (response) -> GenreModel in
                 response.toDomain()
             }
     }
 
-    public func fetchMovieByGenre(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreDomain> {
+    public func fetchMovieByGenre(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreModel> {
         return appDataSource.fetchMovieByGenre(genreId: genreId, page: page)
-            .map { (response) -> DiscoverMovieByGenreDomain in
+            .map { (response) -> DiscoverMovieByGenreModel in
                 response.toDomain()
             }
     }
 
-    public func fetchMovieDetail(movieId: Int) -> Observable<MovieDetailsDomain> {
+    public func fetchMovieDetail(movieId: Int) -> Observable<MovieDetailsModel> {
         return appDataSource.fetchMovieDetail(movieId: movieId)
-            .map { (response) -> MovieDetailsDomain in
+            .map { (response) -> MovieDetailsModel in
                 response.toDomain()
             }
     }
 
-    public func fetchMovieReviews(movieId: Int, page: Int) -> Observable<ReviewDomain> {
+    public func fetchMovieReviews(movieId: Int, page: Int) -> Observable<ReviewModel> {
         return appDataSource.fetchMovieReviews(movieId: movieId, page: page)
-            .map { (response) -> ReviewDomain in
+            .map { (response) -> ReviewModel in
                 response.toDomain()
             }
     }
 
-    public func fetchMovieTrailer(movieId: Int) -> Observable<TrailerDomain> {
+    public func fetchMovieTrailer(movieId: Int) -> Observable<TrailerModel> {
         return appDataSource.fetchMovieTrailer(movieId: movieId)
-            .map { (response) -> TrailerDomain in
+            .map { (response) -> TrailerModel in
                 response.toDomain()
             }
     }

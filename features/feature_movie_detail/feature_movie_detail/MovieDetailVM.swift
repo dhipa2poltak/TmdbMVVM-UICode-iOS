@@ -16,7 +16,7 @@ public class MovieDetailVM: BaseVM {
     private let disposeBag = DisposeBag()
 
     public var movieId = -1
-    var movieDetailsDomain: MovieDetailsDomain?
+    var movieDetailsDomain: MovieDetailsModel?
 
     let titleMovie = Box("")
     let urlImage = Box("")

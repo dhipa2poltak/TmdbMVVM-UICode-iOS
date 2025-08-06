@@ -15,7 +15,7 @@ public class MovieReviewVM: BaseVM {
     private let getMovieReviewUseCase: GetMovieReviewUseCase?
     private let disposeBag = DisposeBag()
 
-    var reviews: [ReviewEntity] = []
+    var reviews: [Review] = []
     let reviewData: Box<Bool?> = Box(false)
 
     public var movieId = -1

@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 public protocol GetMovieByGenreUseCase {
-    func call(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreDomain>
+    func call(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreModel>
 }

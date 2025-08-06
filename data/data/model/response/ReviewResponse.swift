@@ -11,7 +11,7 @@ import domain
 public struct ReviewResponse: Codable {
     let id: Int?
     let page: Int?
-    let results: [Review]?
+    let results: [ReviewDTO]?
     let totalPages: Int?
     let totalResults: Int?
 
@@ -26,7 +26,7 @@ public struct ReviewResponse: Codable {
     init(
         id: Int?,
         page: Int?,
-        results: [Review]?,
+        results: [ReviewDTO]?,
         totalPages: Int?,
         totalResults: Int?
     ) {
@@ -39,8 +39,8 @@ public struct ReviewResponse: Codable {
 }
 
 extension ReviewResponse {
-    func toDomain() -> ReviewDomain {
-        let reviewEntities = results?.map { (review) -> ReviewEntity in
+    func toDomain() -> ReviewModel {
+        let reviewEntities = results?.map { (review) -> Review in
             var imageUrl = review.authorDetails?.avatarPath ?? ""
             if imageUrl.starts(with: "/") {
                 imageUrl.remove(at: imageUrl.startIndex)
@@ -50,8 +50,8 @@ extension ReviewResponse {
                 imageUrl = ""
             }
 
-            let authorDetailsEntity = AuthorDetailsEntity(avatarPath: imageUrl)
-            let reviewEntity = ReviewEntity(
+            let authorDetailsEntity = AuthorDetails(avatarPath: imageUrl)
+            let reviewEntity = Review(
                 author: review.author ?? "",
                 authorDetails: authorDetailsEntity,
                 content: review.content ?? ""
@@ -60,6 +60,6 @@ extension ReviewResponse {
             return reviewEntity
         }
 
-        return ReviewDomain(results: reviewEntities ?? [])
+        return ReviewModel(results: reviewEntities ?? [])
     }
 }

@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 public protocol GetMovieTrailerUseCase {
-    func call(movieId: Int) -> Observable<TrailerDomain>
+    func call(movieId: Int) -> Observable<TrailerModel>
 }

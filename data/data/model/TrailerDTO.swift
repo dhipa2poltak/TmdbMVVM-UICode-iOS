@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Trailer: Codable {
+struct TrailerDTO: Codable {
     let id: String?
     let iso6391: String?
     let iso31661: String?

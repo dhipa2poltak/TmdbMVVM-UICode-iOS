@@ -9,9 +9,9 @@ import Foundation
 import RxSwift
 
 public protocol AppRepository {
-    func fetchMovieGenre() -> Observable<GenreDomain>
-    func fetchMovieByGenre(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreDomain>
-    func fetchMovieDetail(movieId: Int) -> Observable<MovieDetailsDomain>
-    func fetchMovieReviews(movieId: Int, page: Int) -> Observable<ReviewDomain>
-    func fetchMovieTrailer(movieId: Int) -> Observable<TrailerDomain>
+    func fetchMovieGenre() -> Observable<GenreModel>
+    func fetchMovieByGenre(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreModel>
+    func fetchMovieDetail(movieId: Int) -> Observable<MovieDetailsModel>
+    func fetchMovieReviews(movieId: Int, page: Int) -> Observable<ReviewModel>
+    func fetchMovieTrailer(movieId: Int) -> Observable<TrailerModel>
 }

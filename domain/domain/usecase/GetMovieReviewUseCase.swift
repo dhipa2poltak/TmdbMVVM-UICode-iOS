@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 public protocol GetMovieReviewUseCase {
-    func call(movieId: Int, page: Int) -> Observable<ReviewDomain>
+    func call(movieId: Int, page: Int) -> Observable<ReviewModel>
 }

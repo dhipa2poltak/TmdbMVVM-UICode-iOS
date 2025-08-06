@@ -14,6 +14,8 @@ class MovieReviewView: ProgrammaticView {
     let lblTitleMovie: UILabel = {
         let vw = UILabel()
         vw.font = .systemFont(ofSize: 20, weight: .bold)
+        vw.textAlignment = .center
+        vw.numberOfLines = 0
 
         return vw
     }()
@@ -57,7 +59,9 @@ class MovieReviewView: ProgrammaticView {
             lblTitleReview.centerXAnchor.constraint(equalTo: centerXAnchor),
 
             lblTitleMovie.topAnchor.constraint(equalTo: lblTitleReview.bottomAnchor, constant: 8),
-            lblTitleMovie.centerXAnchor.constraint(equalTo: centerXAnchor),
+            //lblTitleMovie.centerXAnchor.constraint(equalTo: centerXAnchor),
+            lblTitleMovie.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            lblTitleMovie.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
 
             tableVw.topAnchor.constraint(equalTo: lblTitleMovie.bottomAnchor, constant: 8),
             tableVw.leadingAnchor.constraint(equalTo: leadingAnchor),

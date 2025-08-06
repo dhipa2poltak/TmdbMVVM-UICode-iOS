@@ -42,7 +42,7 @@ public class ReviewTVC: UITableViewCell {
         ])
     }
 
-    public func bindData(review: ReviewEntity) {
+    public func bindData(review: Review) {
         vw.lblContent.text = review.content
 
         if let avatarPath = review.authorDetails?.avatarPath {

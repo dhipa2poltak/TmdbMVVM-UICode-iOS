@@ -16,7 +16,7 @@ public struct GetMovieReviewUseCaseImpl: GetMovieReviewUseCase {
         self.appRepository = appRepository
     }
 
-    public func call(movieId: Int, page: Int) -> Observable<ReviewDomain> {
+    public func call(movieId: Int, page: Int) -> Observable<ReviewModel> {
         return appRepository.fetchMovieReviews(movieId: movieId, page: page)
     }
 }

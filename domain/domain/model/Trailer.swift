@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TrailerEntity {
+public struct Trailer {
     public let id: String
     public let key: String
     public let name: String

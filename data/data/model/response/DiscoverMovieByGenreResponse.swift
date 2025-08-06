@@ -10,7 +10,7 @@ import domain
 
 public struct DiscoverMovieByGenreResponse: Codable {
     let page: Int?
-    let results: [Movie]?
+    let results: [MovieDTO]?
     let totalPages: Int?
     let totalResults: Int?
 
@@ -23,7 +23,7 @@ public struct DiscoverMovieByGenreResponse: Codable {
 
     init(
         page: Int?,
-        results: [Movie]?,
+        results: [MovieDTO]?,
         totalPages: Int?,
         totalResults: Int?
     ) {
@@ -35,9 +35,9 @@ public struct DiscoverMovieByGenreResponse: Codable {
 }
 
 extension DiscoverMovieByGenreResponse {
-    func toDomain() -> DiscoverMovieByGenreDomain {
-        let movieEntities = results?.map { (movie) -> MovieEntity in
-            return MovieEntity(
+    func toDomain() -> DiscoverMovieByGenreModel {
+        let movieEntities = results?.map { (movie) -> Movie in
+            return Movie(
                 id: movie.id ?? -1,
                 title: movie.title ?? "",
                 overview: movie.overview ?? "",
@@ -45,7 +45,7 @@ extension DiscoverMovieByGenreResponse {
             )
         }
 
-        return DiscoverMovieByGenreDomain(
+        return DiscoverMovieByGenreModel(
             page: self.page ?? -1,
             results: movieEntities ?? [],
             totalPages: self.totalPages ?? -1,

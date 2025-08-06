@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductionCountry: Codable {
+struct ProductionCountryDTO: Codable {
     let iso31661: String?
     let name: String?
 

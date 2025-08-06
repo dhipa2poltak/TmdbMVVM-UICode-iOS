@@ -16,7 +16,7 @@ public struct GetMovieGenreUseCaseImpl: GetMovieGenreUseCase {
         self.appRepository = appRepository
     }
 
-    public func call() -> Observable<GenreDomain> {
+    public func call() -> Observable<GenreModel> {
         return appRepository.fetchMovieGenre()
     }
 }

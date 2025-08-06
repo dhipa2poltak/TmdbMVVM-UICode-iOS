@@ -16,7 +16,7 @@ public struct GetMovieTrailerUseCaseImpl: GetMovieTrailerUseCase {
         self.appRepository = appRepository
     }
 
-    public func call(movieId: Int) -> Observable<TrailerDomain> {
+    public func call(movieId: Int) -> Observable<TrailerModel> {
         return appRepository.fetchMovieTrailer(movieId: movieId)
     }
 }

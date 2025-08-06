@@ -16,7 +16,7 @@ public struct GetMovieDetailsUseCaseImpl: GetMovieDetailsUseCase {
         self.appRepository = appRepository
     }
 
-    public func call(movieId: Int) -> Observable<MovieDetailsDomain> {
+    public func call(movieId: Int) -> Observable<MovieDetailsModel> {
         return appRepository.fetchMovieDetail(movieId: movieId)
     }
 }

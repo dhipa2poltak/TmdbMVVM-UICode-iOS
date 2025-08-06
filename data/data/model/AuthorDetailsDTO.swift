@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AuthorDetails: Codable {
+struct AuthorDetailsDTO: Codable {
     let name: String?
     let username: String?
     let avatarPath: String?

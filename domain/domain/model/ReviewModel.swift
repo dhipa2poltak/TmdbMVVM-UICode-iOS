@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct ReviewDomain {
-    public let results: [ReviewEntity]
+public struct ReviewModel {
+    public let results: [Review]
 
-    public init(results: [ReviewEntity] = []) {
+    public init(results: [Review] = []) {
         self.results = results
     }
 }

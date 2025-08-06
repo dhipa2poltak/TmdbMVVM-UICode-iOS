@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Review: Codable {
+struct ReviewDTO: Codable {
     let author: String?
-    let authorDetails: AuthorDetails?
+    let authorDetails: AuthorDetailsDTO?
     let content: String?
     let createdAt: String?//Date?
     let id: String?
@@ -28,7 +28,7 @@ struct Review: Codable {
 
     init(
         author: String?,
-        authorDetails: AuthorDetails?,
+        authorDetails: AuthorDetailsDTO?,
         content: String?,
         createdAt: String/*Date?*/,
         id: String?,

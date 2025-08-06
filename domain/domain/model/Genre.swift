@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct GenreEntity {
+public struct Genre {
     public let id: Int
     public let name: String
 

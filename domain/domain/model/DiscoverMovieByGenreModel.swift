@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct DiscoverMovieByGenreDomain {
+public struct DiscoverMovieByGenreModel {
     public let page: Int
-    public let results: [MovieEntity]
+    public let results: [Movie]
     public let totalPages: Int
     public let totalResults: Int
 
-    public init(page: Int = 1, results: [MovieEntity] = [], totalPages: Int = -1, totalResults: Int = -1) {
+    public init(page: Int = 1, results: [Movie] = [], totalPages: Int = -1, totalResults: Int = -1) {
         self.page = page
         self.results = results
         self.totalPages = totalPages

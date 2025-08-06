@@ -13,7 +13,7 @@ public struct MovieDetailsResponse: Codable {
     let backdropPath: String?
     //let belongs_to_collection: Any?
     let budget: Int?
-    let genres: [Genre]?
+    let genres: [GenreDTO]?
     let homepage: String?
     let id: Int?
     let imdbId: String?
@@ -22,12 +22,12 @@ public struct MovieDetailsResponse: Codable {
     let overview: String?
     let popularity: Float?
     let posterPath: String?
-    let productionCompanies: [ProductionCompany]?
-    let productionCountries: [ProductionCountry]?
+    let productionCompanies: [ProductionCompanyDTO]?
+    let productionCountries: [ProductionCountryDTO]?
     let releaseDate: String?
     let revenue: Int?
     let runtime: Int?
-    let spokenLanguages: [SpokenLanguage]?
+    let spokenLanguages: [SpokenLanguageDTO]?
     let status: String?
     let tagline: String?
     let title: String?
@@ -68,7 +68,7 @@ public struct MovieDetailsResponse: Codable {
         backdropPath: String?,
         //belongs_to_collection: Any?,
         budget: Int?,
-        genres: [Genre]?,
+        genres: [GenreDTO]?,
         homepage: String?,
         id: Int?,
         imdbId: String?,
@@ -77,12 +77,12 @@ public struct MovieDetailsResponse: Codable {
         overview: String?,
         popularity: Float?,
         posterPath: String?,
-        productionCompanies: [ProductionCompany]?,
-        productionCountries: [ProductionCountry]?,
+        productionCompanies: [ProductionCompanyDTO]?,
+        productionCountries: [ProductionCountryDTO]?,
         releaseDate: String?,
         revenue: Int?,
         runtime: Int?,
-        spokenLanguages: [SpokenLanguage]?,
+        spokenLanguages: [SpokenLanguageDTO]?,
         status: String?,
         tagline: String?,
         title: String?,
@@ -119,8 +119,8 @@ public struct MovieDetailsResponse: Codable {
 }
 
 extension MovieDetailsResponse {
-    func toDomain() -> MovieDetailsDomain {
-        return MovieDetailsDomain(
+    func toDomain() -> MovieDetailsModel {
+        return MovieDetailsModel(
             id: self.id ?? -1,
             overview: self.overview ?? "",
             title: self.title ?? "",
